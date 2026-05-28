@@ -272,7 +272,7 @@ def github_output(**kv) -> None:
 # --------------------------------------------------------------------------- #
 def main() -> None:
     # Coin flip for the evening run only (workflow passes RUN_KIND=evening).
-    if os.environ.get("RUN_KIND") == "evening" and random.random() < 0.5:
+    if os.environ.get("RUN_KIND") == "evening" and random.random() < 0.1:
         log("Evening coin flip: tails. Skipping cleanly.")
         github_output(created="false")
         sys.exit(0)
