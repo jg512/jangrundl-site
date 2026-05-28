@@ -26,6 +26,4 @@ plugins:
 # files that should not be copied into the built site
 exclude:
   - README.md
-  - Gemfile
-  - Gemfile.lock
   - vendor
