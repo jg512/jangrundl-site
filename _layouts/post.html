@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<article>
+  <div class="post-wrap">
+    <div class="post-head">
+      {% assign words = content | number_of_words %}{% assign rtmin = words | divided_by: 230 | plus: 1 %}
+      <div class="p-date">{{ page.date | date: "%d %B %Y" }}<span class="dot-sep">&middot;</span>{{ rtmin }} min read</div>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}<div class="p-sub">{{ page.subtitle }}</div>{% endif %}
+      {% if page.tags.size > 0 %}
+      <div class="tags post-tags">
+        {% for tag in page.tags %}<a href="{{ '/journal/' | relative_url }}?tag={{ tag | uri_escape }}">{{ tag }}</a>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="post-body">
+      {{ content }}
+    </div>
+
+    <nav class="post-nav">
+      <div class="pn-side">
+        {% if page.previous %}
+        <a class="pn" href="{{ page.previous.url | relative_url }}">
+          <span class="dir">&larr; Older</span>
+          <span class="pn-t">{{ page.previous.title }}</span>
+        </a>
+        {% endif %}
+      </div>
+      <a class="pn-home" href="{{ '/journal/' | relative_url }}">All entries</a>
+      <div class="pn-side right">
+        {% if page.next %}
+        <a class="pn" href="{{ page.next.url | relative_url }}">
+          <span class="dir">Newer &rarr;</span>
+          <span class="pn-t">{{ page.next.title }}</span>
+        </a>
+        {% endif %}
+      </div>
+    </nav>
+  </div>
+</article>

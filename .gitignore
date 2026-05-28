@@ -1,0 +1,12 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+Gemfile.lock
+.DS_Store
+
+# pipeline
+__pycache__/
+*.pyc
+.env
+instagram/

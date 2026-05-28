@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.tagline }}{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% feed_meta %}
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="monogram" href="{{ '/' | relative_url }}">J<span class="dot"></span>V<span class="dot"></span>G</a>
+    <nav class="links">
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}#vita">Vita</a>
+      <a href="{{ '/' | relative_url }}#pursuits">Pursuits</a>
+      <a href="{{ '/' | relative_url }}#library">Library</a>
+      <a href="{{ '/journal/' | relative_url }}">Journal</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+
+{{ content }}
+
+<footer class="colophon" id="contact">
+  <div class="wrap">
+    <div class="rule reveal" style="margin-bottom:40px;"><span class="orn">&#10086;</span></div>
+    <div class="foot-grid">
+      <div class="reveal">
+        <div class="kicker solo">Correspondence</div>
+        <h3>Say hello</h3>
+        <p class="lead" style="max-width:48ch;">Whether it's research, a collaboration, a problem you're stuck on, or an argument about which Malazan book is best, feel free to get in touch.</p>
+        <ul class="contact-list">
+          <li><span class="k">Email</span><a href="mailto:janvictorninogrundl@gmail.com">janvictorninogrundl@gmail.com</a></li>
+          <li><span class="k">Web</span><a href="https://www.jangrundl.de" target="_blank" rel="noopener">www.jangrundl.de</a></li>
+          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/jan-victorninogrundl" target="_blank" rel="noopener">in/jan-victorninogrundl</a></li>
+          <li><span class="k">GitHub</span><a href="https://github.com/jg512" target="_blank" rel="noopener">github.com/jg512</a></li>
+          <li><span class="k">RSS</span><a href="{{ '/feed.xml' | relative_url }}">Subscribe to the journal</a></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <p class="coloph">
+          <span class="mono">J V G</span>
+          Ernst-Haeckel-Str. 31, 18059 Rostock, Germany. Born 24 December 2001.
+          <br><br>
+          Set in Cormorant Garamond and EB Garamond. Built to be read slowly. Rostock, 2026.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        e.target.style.transitionDelay = (Math.min(i,4)*70)+"ms";
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+  window.addEventListener("load",()=>{
+    document.querySelectorAll(".hero .reveal").forEach(el=>el.classList.add("in"));
+  });
+
+  const seal = document.querySelector(".portrait .seal");
+  if(seal){
+    window.addEventListener("scroll",()=>{
+      const y = window.scrollY;
+      seal.style.transform = "rotate("+(-9 + y*0.01)+"deg)";
+    },{passive:true});
+  }
+</script>
+</body>
+</html>

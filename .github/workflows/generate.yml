@@ -1,0 +1,77 @@
+name: Generate draft post
+
+# Times are UTC. Rostock is UTC+1 (winter) / UTC+2 (summer), so these land
+# around 06:00 and 18:00 local depending on DST. GitHub cron is also not
+# minute-precise; it can lag under load. That is fine for a blog.
+on:
+  schedule:
+    - cron: "0 5 * * *"    # morning  - always generates
+    - cron: "0 16 * * *"   # evening  - 50% coin flip inside the script
+  workflow_dispatch:        # lets you trigger a run by hand from the Actions tab
+
+# Avoid two runs colliding on the state file / branches.
+concurrency:
+  group: generate-post
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Decide run kind (morning vs evening)
+        id: kind
+        run: |
+          hour=$(date -u +%H)
+          if [ "$hour" -ge 12 ]; then echo "kind=evening" >> "$GITHUB_OUTPUT";
+          else echo "kind=morning" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Generate post
+        id: gen
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RUN_KIND: ${{ steps.kind.outputs.kind }}
+        run: python scripts/generate_content.py
+
+      - name: Open pull request
+        if: steps.gen.outputs.created == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: |
+            _posts/**
+            data/posted.json
+          branch: draft/post-${{ github.run_id }}
+          commit-message: "draft: ${{ steps.gen.outputs.post_title }}"
+          title: "Draft: ${{ steps.gen.outputs.post_title }}"
+          body: |
+            Auto-generated draft, awaiting your review.
+
+            - **Source:** ${{ steps.gen.outputs.source }}
+            - **Mode:** ${{ steps.gen.outputs.mode }}
+            - **File:** `${{ steps.gen.outputs.post_path }}`
+
+            ### Before merging
+            - [ ] Read it. Does it actually say something?
+            - [ ] Trim or rewrite anything that reads like a machine.
+            - [ ] Check no facts were invented beyond the source.
+            - [ ] Reading time still 2-8 min after edits.
+            - [ ] Flip `status: draft` to `status: published` in the front matter.
+
+            Merging this PR publishes it to the site (GitHub Pages rebuilds on merge).
+          labels: auto-draft
+          delete-branch: true

@@ -1,0 +1,10 @@
+# Shared
+google-genai>=1.0.0      # current Google Gen AI SDK (replaces google-generativeai)
+pydantic>=2.0.0          # structured-output schemas for Gemini
+
+# Phase 1 generator (scripts/generate_content.py)
+feedparser>=6.0.0        # RSS parsing (TechCrunch, arXiv)
+python-slugify>=8.0.0    # safe filenames / URLs from titles
+
+# Instagram carousel tool (scripts/instagram_post.py)
+pillow>=10.0.0           # image rendering

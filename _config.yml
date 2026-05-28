@@ -1,0 +1,31 @@
+title: Jan Victornino Grundl
+tagline: Computer Science, AI & the things worth building
+description: >-
+  Jan Victornino Grundl — M.Sc. Computer Science in Rostock, working on AI and
+  software engineering. Vita, journal, and a small library.
+
+# IMPORTANT — set this to match how the site is hosted:
+#   • User/organisation site (username.github.io) or a custom domain (jangrundl.de):
+#         baseurl: ""
+#   • Project site (username.github.io/repo-name):
+#         baseurl: "/repo-name"
+baseurl: ""
+url: "https://www.jangrundl.de"
+
+# Blog posts live in _posts/ and are reached at /journal/the-file-name/
+permalink: /journal/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# files that should not be copied into the built site
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
