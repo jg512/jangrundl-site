@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Eyes in the Sky Get Sharper: When Science Satellites Start Spying"
-subtitle: "A draft from the pipeline -- review before publishing."
+subtitle: ""
 date: 2026-05-28 14:19:18 +0000
 tags: [gps, nasa, satellites, surveillance]
 description: "We all lean on GPS. Our maps, our ride-shares, even our smartwatches—they all whisper to satellites far above, telling us exactly where we stand. We trust it. Most of us don't even"
@@ -9,7 +9,7 @@ canonical_url: https://www.jangrundl.de/journal/the-eyes-in-the-sky-get-sharper-
 source_label: "Ars Technica"
 source_url: https://arstechnica.com/gadgets/2026/05/nasa-satellites-can-spot-gps-jammers-on-earth/
 mode: deep_dive
-status: draft
+status: done
 ---
 
 We all lean on GPS. Our maps, our ride-shares, even our smartwatches—they all whisper to satellites far above, telling us exactly where we stand. We trust it. Most of us don't even think about it, until the signal drops out. Usually, that means a tunnel or a bad cellular connection. But what if it's not a glitch? What if someone, or something, is actively trying to blind us?
