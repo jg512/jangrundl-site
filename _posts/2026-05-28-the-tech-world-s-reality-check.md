@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Tech World's Reality Check"
-subtitle: "A draft from the pipeline -- review before publishing."
+subtitle: ""
 date: 2026-05-28 16:57:05 +0000
 tags: [economy, software, hardware, efficiency]
 description: "Something feels different. The usual drumbeat of 'innovation' and 'disruption' still thrums, but underneath it, a new, more insistent rhythm has emerged. It's less a symphony of gr"
@@ -9,14 +9,14 @@ canonical_url: https://www.jangrundl.de/journal/the-tech-world-s-reality-check/
 source_label: "Hacker News"
 source_url: https://tradecore.com/resources/blog/we-replaced-zendesk-in-48-hours
 mode: roundup
-status: draft
+status: publishef
 ---
 
 Something feels different. The usual drumbeat of 'innovation' and 'disruption' still thrums, but underneath it, a new, more insistent rhythm has emerged. It's less a symphony of grand futures and more the quiet click of a calculator. The tech world, it seems, is finally getting around to balancing its books.
 
 For years, we've lived in a kind of digital dream, fueled by venture capital and the promise of endless growth. Software became a subscription, hardware became disposable, and the phrase 'technical debt' became a punchline. Now, the party lights are dimming. The mood is shifting from aspirational to operational, from 'what can we build?' to 'what can we afford to maintain?'
 
-## The Age of Austerity (or at least, Prudence)
+## The Age of Austerity
 
 This isn't a doomsaying prediction; it's a recalibration. The throughline connecting a surprising clutch of recent headlines points to a quiet but significant pivot towards **efficiency, ownership, and rigorous cost-effectiveness**. It's a reaction to the bloat, the expense, and the sometimes-fragile dependencies that have accumulated in our digital infrastructure. Businesses and consumers alike are starting to eye every expense with a new skepticism.
 
