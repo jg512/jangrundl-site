@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Who Holds the Digital Leash?"
-subtitle: "A draft from the pipeline -- review before publishing."
+title: "Do we even own things?"
+subtitle: "A perspective on digital ownership"
 date: 2026-05-29 08:48:24 +0000
 tags: [ai, privacy, security, autonomy]
 description: "Lately, there’s this hum in the tech world. It’s not a loud, flashy announcement, but more of a persistent, underlying current. It feels like we’re caught between a deepening embra"
@@ -9,12 +9,12 @@ canonical_url: https://www.jangrundl.de/journal/who-holds-the-digital-leash/
 source_label: "Hacker News"
 source_url: https://github.com/HeidiSQL/HeidiSQL
 mode: roundup
-status: draft
+status: published
 ---
 
-Lately, there’s this hum in the tech world. It’s not a loud, flashy announcement, but more of a persistent, underlying current. It feels like we’re caught between a deepening embrace of powerful new tools and a growing unease about who actually holds the reins.
+Lately, there’s this noise in the tech world. It’s not a loud, flashy announcement, but more of a persistent, underlying current. It feels like we’re caught between a deepening embrace of powerful new tools and a growing unease about who actually holds the reins.
 
-It’s a mood of **acceleration meets friction**. Every week, AI gets smarter, more integrated, more capable. That's the acceleration. But with that capability comes friction – questions about control, about privacy, about what happens when our digital lives run up against corporate walls or even national security concerns.
+It’s a mood of **acceleration meets friction**. Every week, AI gets smarter, more integrated, more capable. That's the acceleration. But with that capability comes friction like questions about control, about privacy, about what happens when our digital lives run up against corporate walls or even national security concerns.
 
 ## The Thread
 
@@ -34,13 +34,13 @@ Then there's the much heavier news that **US military personnel are reportedly b
 
 And what about the strange incident where an **undisclosed addition in `jqwik` instructed AI coding agents to delete app output**? This one is wild. It's a glimpse into a new kind of digital mischief, or maybe even a new frontier in cyber conflict. Someone managed to inject a prompt into a testing framework that, when used by AI agents, told them to *nuke* the application's output.
 
-It’s a stark reminder that AI, as powerful as it is (and with new models like Claude Opus 4.8 making waves, it's only getting more so), is still a tool. A very smart tool, but a tool nonetheless. And like any tool, it can be misused, or, in this case, tricked into self-sabotage. It shows how fragile the line is between helpful AI and an agent that can be turned against its intended purpose, often in ways that are hard to detect.
+It’s a stark reminder that AI, as powerful as it is (and with new models like Claude Opus 4.8 making waves, it's only getting more so), is still a tool. A very smart tool, but a tool nonetheless. And like any tool, it can be misused, or, in this case, tricked into self-sabotage. It shows how fragile the line is between helpful AI and an agent that can be turned against its intended purpose.
 
 ## The Human Lens
 
 These stories, in their different ways, tell us something important about living right now. They make you wonder: How much of my life is truly private? How much of the technology I rely on do I actually *control*? The convenience that AI and connected devices promise is huge, but it feels like it often comes with hidden strings.
 
-For everyday people, this means a subtle but constant erosion of personal autonomy. Your car, your location, the software you rely on – these things are becoming less and less *yours* in a holistic sense. It fosters a feeling of vulnerability, a sense that the digital world is growing increasingly complex, and not always in a way that benefits the individual.
+For everyday people, this means a subtle but constant erosion of personal autonomy. Your car, your location, the software you rely on: these things are becoming less and less *yours* in a holistic sense. It fosters a feeling of vulnerability, a sense that the digital world is growing increasingly complex, and not always in a way that benefits the individual.
 
 It makes me think about the choices we make, often without realizing the long-term implications. Opting into a smart device or an AI assistant feels simple, but each choice adds another layer to this intricate web of data and control. We're trading a bit of independence for a bit of ease, and sometimes, the trade-off feels heavier than advertised.
 
