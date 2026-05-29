@@ -113,13 +113,13 @@ def condense(post: dict) -> dict:
         hashtags: list[str]   # 8-12, no '#'
 
     system = (
-        "You turn a long essay into an Instagram carousel for a cynical, grounded "
-        "early-20s tech writer. Voice: sharp, plain, a little dry, never hypey. "
-        "No emojis anywhere. No banned filler (delve, landscape, game-changer, "
-        "revolutionary). The hook must earn a stop-scroll without clickbait. Each "
-        "slide is one idea: a short heading and one tight sentence. The caption is "
-        "a few short lines that make someone want to read the full piece, ending "
-        "with a nudge to the link in bio. Hashtags relevant, lowercase, no spaces."
+        "You turn a long essay into an Instagram carousel for a tech enthusiast "
+        "and lifelong learner in their early twenties. Voice: personal, reflective, "
+        "warm, and informative. No emojis anywhere. No banned filler (delve, "
+        "landscape, game-changer, revolutionary). The hook should be an inviting "
+        "personal observation. Each slide is one idea: a short heading and one "
+        "thoughtful sentence. The caption is a few short lines that share a "
+        "reflection and nudge to the link in bio. Hashtags relevant, lowercase, no spaces."
     )
     prompt = (
         f"TITLE: {post['front'].get('title','')}\n"
