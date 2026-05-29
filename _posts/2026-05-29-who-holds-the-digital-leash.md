@@ -7,7 +7,7 @@ tags: [ai, privacy, security, autonomy]
 description: "Lately, there’s this hum in the tech world. It’s not a loud, flashy announcement, but more of a persistent, underlying current. It feels like we’re caught between a deepening embra"
 canonical_url: https://www.jangrundl.de/journal/who-holds-the-digital-leash/
 source_label: "Hacker News"
-source_url: https://github.com/HeidiSQL/HeidiSQL
+source_url: 
 mode: roundup
 status: published
 ---
