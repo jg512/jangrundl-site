@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Finding the Signal in the Static: A Yearning for Clarity"
-subtitle: "A draft from the pipeline -- review before publishing."
+subtitle: ""
 date: 2026-05-31 08:19:50 +0000
 tags: [tech philosophy, web development, open source, personal reflection]
 description: "There's a feeling I keep bumping into lately, a quiet hum beneath all the big tech headlines and AI hype. It's a sense of longing, almost. A desire for things to be… simpler. More"
@@ -9,7 +9,7 @@ canonical_url: https://www.jangrundl.de/journal/finding-the-signal-in-the-static
 source_label: "Hacker News"
 source_url: https://github.com/abakh/nbsdgames/releases
 mode: roundup
-status: draft
+status: published
 ---
 
 There's a feeling I keep bumping into lately, a quiet hum beneath all the big tech headlines and AI hype. It's a sense of longing, almost. A desire for things to be… simpler. More *knowable*.
