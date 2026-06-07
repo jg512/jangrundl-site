@@ -16,7 +16,7 @@ layout: default
     </h1>
     <p class="hero-sub">Master's student at the University of Rostock. I build semantically aware tools and IoT sensor systems for the real world.</p>
     <div class="hero-btns">
-      <a href="#vita" class="btn-primary">View the Vita</a>
+      <a href="#cv" class="btn-primary">View the CV</a>
       <a href="#contact" class="btn-outline">Contact Me</a>
     </div>
   </div>
@@ -32,6 +32,7 @@ layout: default
         <div class="about-text">
           <p>I grew up in Rostock and mostly stayed. I'm doing a master's in computer science here, after finishing my bachelor's at the same university. What keeps me curious is the overlap between machine learning and software engineering.</p>
           <p>My degree took longer than the standard plan. For a good part of it I was also working to help support my family. It taught me how to do real work in the hours left over after a long day, and how to stay patient when things move slowly.</p>
+          <p>I enjoy teaching almost as much as building. Trying to explain something clearly is usually how I find out whether I really understand it.</p>
         </div>
         <div class="skills-block">
           <p class="skills-label">Focus Areas</p>
@@ -72,24 +73,152 @@ layout: default
   </div>
 </section>
 
-<!-- VITA (Using Projects Grid Style) -->
-<section class="projects" id="vita">
+<!-- CV / THE WORKING RECORD -->
+<section class="vita" id="cv" style="background: var(--cream); padding: 7rem 0;">
   <div class="container">
     <div class="projects-header">
       <div class="reveal">
         <span class="section-label">Curriculum Vitae</span>
         <h2 class="section-title">The Working Record</h2>
       </div>
-      <a href="#about" class="view-all">Read Bio →</a>
+      <a href="#projects" class="view-all">View Projects →</a>
+    </div>
+    
+    <div class="cv-timeline reveal">
+      <p class="skills-label" style="border-bottom: 1px solid var(--cream-dark); padding-bottom: 0.5rem;">Professional Experience</p>
+      
+      <div class="cv-entry">
+        <div class="cv-when">Feb 2026 – Present</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Graduate Research Assistant</h4>
+          <div class="cv-org">Fraunhofer IGD / Univ. Rostock</div>
+          <ul class="cv-desc">
+            <li>Built an IoT sensor system (Arduino, Raspberry Pi) for the early detection of respiratory illness in calves.</li>
+            <li>Developed ML pipelines in PyTorch and OpenCV, annotated data with CVAT, and ran field evaluations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">Dec 2025 – Present</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Graduate Research Assistant</h4>
+          <div class="cv-org">Chair of Software Engineering, Univ. Rostock</div>
+          <ul class="cv-desc">
+            <li>Designed a semi-autonomous LLM agent (ReAct prompting, tool use) that generates UML class diagrams.</li>
+            <li>Built the dataset and implemented the system in Python and the Hugging Face ecosystem.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">Nov 2025 – May 2026</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Working Student, AI</h4>
+          <div class="cv-org">Ossinity GmbH</div>
+          <ul class="cv-desc">
+            <li>Annotated MRI scans in 3D Slicer for AI-based breast cancer detection.</li>
+            <li>Owned quality assurance: testing, bug-fixing, and model validation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">May 2025 – Nov 2025</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Student Teaching Assistant</h4>
+          <div class="cv-org">Chair of Integrated Systems, Univ. Rostock</div>
+          <ul class="cv-desc">
+            <li>Planned, recorded and edited modular instructional videos on computer architecture.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">Sep 2023 – Nov 2025</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Tutor</h4>
+          <div class="cv-org">Junior Study Program, Univ. Rostock</div>
+          <ul class="cv-desc">
+            <li>Ran tutorials and dedicated sessions for prospective CS students on AI fundamentals, maths, and programming.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">Jul 2020 – Sep 2022</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Part-Time Sales Associate</h4>
+          <div class="cv-org">Junge Die Bäckerei</div>
+          <ul class="cv-desc">
+            <li>Where I learned to show up early, deal with all kinds of people, and keep things running on a busy morning.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-timeline reveal" style="margin-top: 4rem;">
+      <p class="skills-label" style="border-bottom: 1px solid var(--cream-dark); padding-bottom: 0.5rem;">Education</p>
+      
+      <div class="cv-entry">
+        <div class="cv-when">Since Oct 2025</div>
+        <div class="cv-what">
+          <h4 class="cv-title">M.Sc. Computer Science</h4>
+          <div class="cv-org">University of Rostock</div>
+          <ul class="cv-desc">
+            <li>Focus: AI and Software Engineering. Expected graduation Oct 2027.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">Oct 2020 – Oct 2025</div>
+        <div class="cv-what">
+          <h4 class="cv-title">B.Sc. Computer Science</h4>
+          <div class="cv-org">University of Rostock</div>
+          <ul class="cv-desc">
+            <li>Final grade 2.4 &middot; Thesis 1.3 (German scale). Extended my studies to help support my family.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-when">Until Jun 2020</div>
+        <div class="cv-what">
+          <h4 class="cv-title">Abitur</h4>
+          <div class="cv-org">Schulcampus Evershagen</div>
+          <ul class="cv-desc">
+            <li>German university entrance qualification, Rostock.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects" style="background: var(--white); padding: 7rem 0;">
+  <div class="container">
+    <div class="projects-header">
+      <div class="reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
+      <a href="#volunteer" class="view-all">View Volunteering →</a>
     </div>
     <div class="projects-grid">
+      <!-- Fablr -->
       <div class="project-card reveal">
-        <div class="project-img" style="background: var(--green-dark);">
-          <span class="project-icon" style="color: var(--white); opacity: 1;">📱</span>
+        <div class="project-img" style="background: var(--green-mid);">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
         </div>
         <div class="project-info">
           <div class="project-category">Featured Project &middot; 2026</div>
-          <div class="project-name">Fablr: AI Discovery Engine</div>
+          <div class="project-name" style="color: var(--ink);">Fablr: AI Discovery Engine</div>
           <div class="project-desc">A high-fidelity book matchmaker built with React Native and Supabase to solve "Book Paralysis".</div>
           <div class="project-tech">
             <span class="tech-badge">React Native</span>
@@ -99,32 +228,34 @@ layout: default
         </div>
       </div>
 
+      <!-- Summer of Solutions -->
       <div class="project-card reveal" style="transition-delay: 0.1s">
-        <div class="project-img" style="background: #e8f0eb;">
-          <span class="project-icon">🔬</span>
+        <div class="project-img" style="background: #f0ebe0;">
+          <span class="project-icon">🚚</span>
         </div>
         <div class="project-info">
-          <div class="project-category">Research &middot; Feb 2026 – Present</div>
-          <div class="project-name">Graduate Research Assistant</div>
-          <div class="project-desc">Building an IoT sensor system for the early detection of respiratory illness in calves at Fraunhofer IGD.</div>
+          <div class="project-category">Lead &middot; Apr 2026 – Oct 2026</div>
+          <div class="project-name" style="color: var(--ink);">Summer of Solutions</div>
+          <div class="project-desc">Leading a master's-level team to optimise Nordwasser's fleet of 200 vehicles using telematics and cost-benefit analysis.</div>
           <div class="project-tech">
-            <span class="tech-badge">PyTorch</span>
-            <span class="tech-badge">OpenCV</span>
+            <span class="tech-badge">Architecture</span>
+            <span class="tech-badge">Telematics</span>
           </div>
         </div>
       </div>
 
+      <!-- AI Hackathon -->
       <div class="project-card reveal" style="transition-delay: 0.2s">
         <div class="project-img" style="background: #e0e8f0;">
-          <span class="project-icon">🤖</span>
+          <span class="project-icon">🧠</span>
         </div>
         <div class="project-info">
-          <div class="project-category">Software Eng &middot; Dec 2025 – Present</div>
-          <div class="project-name">Graduate Research Assistant</div>
-          <div class="project-desc">Designing semi-autonomous LLM agents for automated UML class diagram generation at Univ. Rostock.</div>
+          <div class="project-category">Hackathon &middot; Apr 2026</div>
+          <div class="project-name" style="color: var(--ink);">Aline AI Core</div>
+          <div class="project-desc">Top-3 finish at Cheftreff. An AI assistant that turns business requirements into concrete developer tasks and PRs.</div>
           <div class="project-tech">
-            <span class="tech-badge">LLMs</span>
-            <span class="tech-badge">Python</span>
+            <span class="tech-badge">AI Assistant</span>
+            <span class="tech-badge">Automation</span>
           </div>
         </div>
       </div>
@@ -132,45 +263,69 @@ layout: default
   </div>
 </section>
 
-<!-- PURSUITS & LIBRARY -->
-<section class="about" id="pursuits" style="background: var(--cream);">
+<!-- VOLUNTEER & PURSUITS -->
+<section class="volunteer" id="volunteer" style="background: var(--cream); padding: 7rem 0;">
   <div class="container">
-    <div class="about-grid">
+    <div class="projects-header">
       <div class="reveal">
         <span class="section-label">Beyond the Desk</span>
-        <h2 class="section-title">What I'm doing now</h2>
-        <div class="about-text">
-          <p>The work that isn't on a contract: rivers, classrooms, and a lot of reading.</p>
-          <ul style="list-style: none; margin-top: 1.5rem;">
-            <li style="margin-bottom: 1.2rem;"><strong>Building in the Open:</strong> I contribute to NALA-AI, an open platform for IoT-based river monitoring across Germany.</li>
-            <li style="margin-bottom: 1.2rem;"><strong>Teaching:</strong> Volunteer with BYTE Challenge, running online STEM courses for children.</li>
-            <li><strong>Reading:</strong> Epic fantasy slowly and all the way through, usually with the map open.</li>
-          </ul>
+        <h2 class="section-title">Volunteering & Pursuits</h2>
+      </div>
+    </div>
+    <div class="projects-grid">
+      <!-- NALA-AI -->
+      <div class="project-card reveal">
+        <div class="project-img" style="background: #e8f0eb;">
+          <span class="project-icon">🌊</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Open Source Contributor</div>
+          <div class="project-name" style="color: var(--ink);">NALA-AI</div>
+          <div class="project-desc">Building in the open. I contribute to an open platform that turns cheap sensors into live maps of Germany's rivers. Presented at re:publica 2026.</div>
+          <div class="project-tech">
+            <span class="tech-badge">IoT</span>
+            <span class="tech-badge">Community</span>
+          </div>
         </div>
       </div>
-      <div class="reveal" style="transition-delay: 0.15s">
-        <span class="section-label">A Small Library</span>
-        <h2 class="section-title">On the Shelf</h2>
-        <div class="projects-grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
-          <div class="project-card" style="cursor: default;">
-            <div class="project-img" style="height: 180px; background: #1a1a18;">
-              <img src="https://covers.openlibrary.org/b/isbn/9780765322883-L.jpg?default=false" alt="Gardens of the Moon" style="height: 100%; width: auto; filter: none;">
-            </div>
-          </div>
-          <div class="project-card" style="cursor: default;">
-            <div class="project-img" style="height: 180px; background: #2a3a2c;">
-              <img src="https://covers.openlibrary.org/b/isbn/9780316049443-L.jpg?default=false" alt="The Dwarves" style="height: 100%; width: auto; filter: none;">
-            </div>
+
+      <!-- BYTE Challenge -->
+      <div class="project-card reveal" style="transition-delay: 0.1s">
+        <div class="project-img" style="background: #ece5d6;">
+          <span class="project-icon">🎒</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Volunteer Teacher</div>
+          <div class="project-name" style="color: var(--ink);">BYTE Challenge</div>
+          <div class="project-desc">Teaching the next ones. I run online STEM courses for kids who might never otherwise get the chance to see a line of code.</div>
+          <div class="project-tech">
+            <span class="tech-badge">Education</span>
+            <span class="tech-badge">STEM</span>
           </div>
         </div>
-        <p class="about-text" style="font-size: 0.85rem; margin-top: 1rem; color: var(--muted);">Currently reading: <em>Gardens of the Moon</em> &middot; Steven Erikson</p>
+      </div>
+
+      <!-- Library/Reading -->
+      <div class="project-card reveal" style="transition-delay: 0.2s">
+        <div class="project-img" style="height: 220px; background: #1a1a18;">
+          <img src="{{ '/assets/img/badge.jpg' | relative_url }}" alt="Conference Badge" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; filter: none;">
+        </div>
+        <div class="project-info">
+          <div class="project-category">Continuous Learning</div>
+          <div class="project-name" style="color: var(--ink);">Always Learning</div>
+          <div class="project-desc">Whether it's a new framework, a deep dive into an old paper, or reading epic fantasy. I train regularly to clear my head.</div>
+          <div class="project-tech">
+            <span class="tech-badge">Reading</span>
+            <span class="tech-badge">Sport</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- JOURNAL -->
-<section class="projects" id="journal">
+<section class="projects" id="journal" style="background: var(--white); padding: 7rem 0;">
   <div class="container">
     <div class="projects-header">
       <div class="reveal">

@@ -37,7 +37,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--white);
@@ -146,7 +146,7 @@ nav {
 }
 
 .hero-headline {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: clamp(2.8rem, 4vw, 4.2rem);
   line-height: 1.0;
@@ -248,7 +248,7 @@ nav {
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 3vw, 2.8rem);
   color: var(--ink);
@@ -315,7 +315,7 @@ nav {
 }
 
 .stat-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--green-dark);
@@ -409,7 +409,7 @@ nav {
 }
 
 .project-name {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink);
@@ -550,7 +550,7 @@ nav {
   background: var(--accent);
   color: var(--ink);
   border: none;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -575,7 +575,7 @@ footer {
 }
 
 .footer-name {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
   color: rgba(255,255,255,0.4);
@@ -650,7 +650,7 @@ footer {
 }
 
 .tagbar button {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -682,7 +682,7 @@ footer {
 }
 
 .year-sep .yr {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 2rem;
   color: var(--green-dark);
@@ -723,7 +723,7 @@ footer {
 .p-date .dot-sep { margin: 0 10px; opacity: 0.3; }
 
 .post-head h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   line-height: 1.1;
@@ -745,7 +745,7 @@ footer {
 }
 
 .post-body h2, .post-body h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--ink);
   margin: 2.5rem 0 1rem;
 }
@@ -800,7 +800,7 @@ footer {
 }
 
 .pn .pn-t {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   color: var(--ink);
   transition: color 0.2s;
@@ -809,7 +809,7 @@ footer {
 .pn:hover .pn-t { color: var(--green-mid); }
 
 .pn-home {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -869,7 +869,7 @@ footer {
 }
 
 .j-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -888,3 +888,16 @@ footer {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
 }
+
+/* CV TIMELINE */
+.cv-timeline { display: flex; flex-direction: column; gap: 2rem; }
+.cv-entry { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; border-bottom: 1px solid var(--cream-dark); padding-bottom: 2rem; }
+.cv-entry:last-child { border-bottom: none; padding-bottom: 0; }
+.cv-when { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; padding-top: 0.3rem; }
+.cv-what { display: flex; flex-direction: column; }
+.cv-title { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+.cv-org { font-size: 0.95rem; color: var(--green-mid); font-weight: 600; margin-bottom: 1rem; }
+.cv-desc { list-style: none; margin: 0; padding: 0; }
+.cv-desc li { position: relative; padding-left: 1.2rem; margin-bottom: 0.5rem; color: var(--ink-soft); line-height: 1.6; font-size: 0.95rem;}
+.cv-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+@media (max-width: 900px) { .cv-entry { grid-template-columns: 1fr; gap: 0.5rem; } .cv-when { padding-top: 0; } }
