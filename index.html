@@ -17,7 +17,7 @@ layout: default
     <p class="hero-sub">Master's student at the University of Rostock. I build semantically aware tools and IoT sensor systems for the real world.</p>
     <div class="hero-btns">
       <a href="#vita" class="btn-primary">View the Vita</a>
-      <a href="#about" class="btn-outline">More About Me</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
     </div>
   </div>
 </section>
@@ -27,14 +27,26 @@ layout: default
   <div class="container">
     <div class="about-grid">
       <div class="reveal">
-        <span class="section-label">A Few Honest Words</span>
+        <span class="section-label">About Me</span>
         <h2 class="section-title">Crafting code with purpose</h2>
         <div class="about-text">
           <p>I grew up in Rostock and mostly stayed. I'm doing a master's in computer science here, after finishing my bachelor's at the same university. What keeps me curious is the overlap between machine learning and software engineering.</p>
           <p>My degree took longer than the standard plan. For a good part of it I was also working to help support my family. It taught me how to do real work in the hours left over after a long day, and how to stay patient when things move slowly.</p>
-          <p>I enjoy teaching almost as much as building. Trying to explain something clearly is usually how I find out whether I really understand it.</p>
         </div>
-        <div class="stats-grid" style="margin-top: 2rem;">
+        <div class="skills-block">
+          <p class="skills-label">Focus Areas</p>
+          <div class="skills-tags">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Software Engineering</span>
+            <span class="tag">IoT Systems</span>
+            <span class="tag">LLM Agents</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay: 0.15s">
+        <div class="stats-grid">
           <div class="stat">
             <div class="stat-num">M.Sc.</div>
             <div class="stat-desc">Student CS</div>
@@ -43,13 +55,6 @@ layout: default
             <div class="stat-num">2+</div>
             <div class="stat-desc">Years Research</div>
           </div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay: 0.15s">
-        <div class="hero-photo" style="min-height: 500px; border: 1px solid var(--cream-dark); margin-bottom: 1.5rem;">
-          <img src="{{ '/assets/img/candid.jpg' | relative_url }}" alt="Jan outdoors">
-        </div>
-        <div class="stats-grid">
           <div class="stat">
             <div class="stat-num">3+</div>
             <div class="stat-desc">Teaching Roles</div>
@@ -59,125 +64,68 @@ layout: default
             <div class="stat-desc">Cups of Coffee</div>
           </div>
         </div>
+        <div class="hero-photo" style="min-height: 300px; margin-top: 2rem; border: 1px solid var(--cream-dark);">
+            <img src="{{ '/assets/img/candid.jpg' | relative_url }}" alt="Jan outdoors" style="filter: none;">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VITA -->
-<section class="vita" id="vita">
+<!-- VITA (Using Projects Grid Style) -->
+<section class="projects" id="vita">
   <div class="container">
-    <div class="vita-header">
+    <div class="projects-header">
       <div class="reveal">
         <span class="section-label">Curriculum Vitae</span>
         <h2 class="section-title">The Working Record</h2>
       </div>
-    </div>
-    <div class="vita-grid">
-      <div class="vita-entry reveal">
-        <div class="vita-when">Feb 2026 – Present</div>
-        <div class="vita-what">
-          <h4>Graduate Research Assistant</h4>
-          <div class="vita-org">Fraunhofer IGD / Univ. Rostock</div>
-          <ul>
-            <li>Built an IoT sensor system for respiratory illness detection in calves.</li>
-            <li>Developed ML pipelines in PyTorch and OpenCV, and ran field evaluations.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="vita-entry reveal">
-        <div class="vita-when">Dec 2025 – Present</div>
-        <div class="vita-what">
-          <h4>Graduate Research Assistant</h4>
-          <div class="vita-org">Chair of Software Engineering, Univ. Rostock</div>
-          <ul>
-            <li>Designed a semi-autonomous LLM agent for generating UML class diagrams.</li>
-            <li>Implemented the system in Python using the Hugging Face ecosystem.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="vita-entry reveal">
-        <div class="vita-when">Nov 2025 – May 2026</div>
-        <div class="vita-what">
-          <h4>Working Student, AI</h4>
-          <div class="vita-org">Ossinity GmbH</div>
-          <ul>
-            <li>Annotated MRI scans for AI-based cancer detection.</li>
-            <li>Owned quality assurance: testing, bug-fixing, and model validation.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="vita-entry reveal">
-        <div class="vita-when">Apr 2026 – Oct 2026</div>
-        <div class="vita-what">
-          <h4>Technical Lead, Summer of Solutions</h4>
-          <div class="vita-org">Nordwasser GmbH</div>
-          <ul>
-            <li>Leading a team to optimise a fleet of 200 vehicles using telematics.</li>
-            <li>Owning the solution architecture and data model.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PURSUITS -->
-<section class="vita" id="pursuits" style="background: var(--cream);">
-  <div class="container">
-    <div class="vita-header">
-      <div class="reveal">
-        <span class="section-label">Beyond the Desk</span>
-        <h2 class="section-title">What I'm Doing Now</h2>
-      </div>
+      <a href="#about" class="view-all">Read Bio →</a>
     </div>
     <div class="projects-grid">
       <div class="project-card reveal">
         <div class="project-img" style="background: #e8f0eb;">
-          <span class="project-icon">🌊</span>
+          <span class="project-icon">🔬</span>
         </div>
         <div class="project-info">
-          <div class="project-category">Open Source</div>
-          <div class="project-name">Building in the Open</div>
-          <div class="project-desc">I contribute to NALA-AI, an open platform that turns cheap sensors into live maps of Germany's rivers. The work is equal parts code, plumbing, and persuasion.</div>
+          <div class="project-category">Research &middot; Feb 2026 – Present</div>
+          <div class="project-name">Graduate Research Assistant</div>
+          <div class="project-desc">Building an IoT sensor system for the early detection of respiratory illness in calves at Fraunhofer IGD.</div>
           <div class="project-tech">
-            <span class="tech-badge">IoT</span>
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">Community</span>
+            <span class="tech-badge">PyTorch</span>
+            <span class="tech-badge">OpenCV</span>
+            <span class="tech-badge">Arduino</span>
           </div>
         </div>
       </div>
 
       <div class="project-card reveal" style="transition-delay: 0.1s">
-        <div class="project-img" style="background: #f0ebe0;">
-          <span class="project-icon">🍎</span>
+        <div class="project-img" style="background: #e0e8f0;">
+          <span class="project-icon">🤖</span>
         </div>
         <div class="project-info">
-          <div class="project-category">Volunteering</div>
-          <div class="project-name">Teaching the Next Ones</div>
-          <div class="project-desc">I run online STEM courses for kids who might never otherwise see a line of code, through the GI's BYTE Challenge.</div>
+          <div class="project-category">Software Eng &middot; Dec 2025 – Present</div>
+          <div class="project-name">Graduate Research Assistant</div>
+          <div class="project-desc">Designing semi-autonomous LLM agents for automated UML class diagram generation at Univ. Rostock.</div>
           <div class="project-tech">
-            <span class="tech-badge">Education</span>
+            <span class="tech-badge">LLMs</span>
             <span class="tech-badge">Python</span>
-            <span class="tech-badge">STEM</span>
+            <span class="tech-badge">Hugging Face</span>
           </div>
         </div>
       </div>
 
       <div class="project-card reveal" style="transition-delay: 0.2s">
-        <div class="project-img" style="background: #e0e8f0;">
-          <span class="project-icon">🏃</span>
+        <div class="project-img" style="background: #f0ebe0;">
+          <span class="project-icon">🏛️</span>
         </div>
         <div class="project-info">
-          <div class="project-category">Lifestyle</div>
-          <div class="project-name">Sport & the Outdoors</div>
-          <div class="project-desc">I train regularly. It clears my head and makes the long evenings of reading feel earned.</div>
+          <div class="project-category">Lead &middot; Apr 2026 – Oct 2026</div>
+          <div class="project-name">Summer of Solutions Tech Lead</div>
+          <div class="project-desc">Leading a master's-level team to optimise Nordwasser's fleet of 200 vehicles using telematics and cost-benefit analysis.</div>
           <div class="project-tech">
-            <span class="tech-badge">Fitness</span>
-            <span class="tech-badge">Balance</span>
+            <span class="tech-badge">Architecture</span>
+            <span class="tech-badge">Telematics</span>
           </div>
         </div>
       </div>
@@ -185,66 +133,54 @@ layout: default
   </div>
 </section>
 
-<!-- LIBRARY -->
-<section class="about" id="library">
+<!-- PURSUITS & LIBRARY -->
+<section class="about" id="pursuits" style="background: var(--cream);">
   <div class="container">
-    <div class="vita-header">
+    <div class="about-grid">
       <div class="reveal">
+        <span class="section-label">Beyond the Desk</span>
+        <h2 class="section-title">What I'm doing now</h2>
+        <div class="about-text">
+          <p>The work that isn't on a contract: rivers, classrooms, and a lot of reading.</p>
+          <ul style="list-style: none; margin-top: 1.5rem;">
+            <li style="margin-bottom: 1.2rem;"><strong>Building in the Open:</strong> I contribute to NALA-AI, an open platform for IoT-based river monitoring across Germany.</li>
+            <li style="margin-bottom: 1.2rem;"><strong>Teaching:</strong> Volunteer with BYTE Challenge, running online STEM courses for children.</li>
+            <li><strong>Reading:</strong> Epic fantasy slowly and all the way through, usually with the map open.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay: 0.15s">
         <span class="section-label">A Small Library</span>
         <h2 class="section-title">On the Shelf</h2>
-      </div>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-img" style="height: 280px; background: #1a1a18;">
-          <img src="https://covers.openlibrary.org/b/isbn/9780765322883-L.jpg?default=false" alt="Gardens of the Moon" style="height: 100%; width: auto; filter: none;">
-        </div>
-        <div class="project-info">
-          <div class="project-category">Fantasy &middot; Steven Erikson</div>
-          <div class="project-name">Gardens of the Moon</div>
-          <div class="project-desc">I'm reading this now. Erikson drops you into the middle of a history and trusts you to keep up.</div>
-          <div class="project-tech">
-            <span class="tech-badge">Now Reading</span>
+        <div class="projects-grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+          <div class="project-card" style="cursor: default;">
+            <div class="project-img" style="height: 180px; background: #1a1a18;">
+              <img src="https://covers.openlibrary.org/b/isbn/9780765322883-L.jpg?default=false" alt="Gardens of the Moon" style="height: 100%; width: auto; filter: none;">
+            </div>
+          </div>
+          <div class="project-card" style="cursor: default;">
+            <div class="project-img" style="height: 180px; background: #2a3a2c;">
+              <img src="https://covers.openlibrary.org/b/isbn/9780316049443-L.jpg?default=false" alt="The Dwarves" style="height: 100%; width: auto; filter: none;">
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay: 0.1s">
-        <div class="project-img" style="height: 280px; background: #2a3a2c;">
-          <img src="https://covers.openlibrary.org/b/isbn/9780316049443-L.jpg?default=false" alt="The Dwarves" style="height: 100%; width: auto; filter: none;">
-        </div>
-        <div class="project-info">
-          <div class="project-category">Fantasy &middot; Markus Heitz</div>
-          <div class="project-name">The Dwarves</div>
-          <div class="project-desc">Tungdil, Girdlegard, and some of the best axe-work in fantasy. A whole series I keep coming back to.</div>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay: 0.2s">
-        <div class="project-img" style="height: 280px; background: #3a2a24;">
-          <img src="https://covers.openlibrary.org/b/isbn/9781906735715-L.jpg?default=false" alt="Monarchies of God" style="height: 100%; width: auto; filter: none;">
-        </div>
-        <div class="project-info">
-          <div class="project-category">Fantasy &middot; Paul Kearney</div>
-          <div class="project-name">Monarchies of God</div>
-          <div class="project-desc">Kings, heretics, and a voyage west. Kearney writes faith and war with a maturity you don't often get.</div>
-        </div>
+        <p class="about-text" style="font-size: 0.85rem; margin-top: 1rem; color: var(--muted);">Currently reading: <em>Gardens of the Moon</em> &middot; Steven Erikson</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- JOURNAL -->
-<section class="journal" id="journal">
+<section class="projects" id="journal">
   <div class="container">
-    <div class="vita-header">
+    <div class="projects-header">
       <div class="reveal">
-        <span class="section-label">From the Journal</span>
+        <span class="section-label">Journal</span>
         <h2 class="section-title">Recent Writing</h2>
       </div>
-      <a href="{{ '/journal/' | relative_url }}" class="view-all">View all entries →</a>
+      <a href="{{ '/journal/' | relative_url }}" class="view-all">View full journal →</a>
     </div>
-
+    
     {% if site.posts.size > 0 %}
       <div class="journal-list">
         {% for post in site.posts limit:3 %}
@@ -259,7 +195,7 @@ layout: default
         {% endfor %}
       </div>
     {% else %}
-      <p class="empty-note">No entries yet. Drop a markdown file into <code>_posts/</code> and it will show up here.</p>
+      <p class="empty-note">No entries yet.</p>
     {% endif %}
   </div>
 </section>
@@ -271,7 +207,7 @@ layout: default
     <h2 class="section-title">Let's work together</h2>
     <div class="contact-grid">
       <div class="reveal">
-        <p class="contact-text">Whether it's research, a collaboration, or an argument about which Fantasy book is best, feel free to get in touch.</p>
+        <p class="contact-text">Have a project in mind, a research question, or just want to argue about fantasy books? I'm always open to new discussions.</p>
         <div class="social-links">
           <a href="mailto:janvictorninogrundl@gmail.com" class="social-link">Email: janvictorninogrundl@gmail.com</a>
           <a href="https://github.com/jg512" class="social-link" target="_blank">GitHub: github.com/jg512</a>
@@ -279,10 +215,9 @@ layout: default
         </div>
       </div>
       <div class="reveal" style="transition-delay: 0.15s">
-        <!-- Optional: Add a simple form or just more text -->
-        <p class="contact-text">I'm currently based in Rostock, Germany, but I'm always open to remote opportunities and international research discussions.</p>
+        <p class="contact-text">Currently based in Rostock, Germany. Open to remote collaborations and international research dialogues.</p>
         <div class="hero-btns" style="margin-top: 2rem;">
-            <a href="mailto:janvictorninogrundl@gmail.com" class="btn-primary" style="background: var(--accent); color: var(--ink);">Send an Email</a>
+            <a href="mailto:janvictorninogrundl@gmail.com" class="btn-primary" style="background: var(--accent); color: var(--ink);">Send Message</a>
         </div>
       </div>
     </div>
