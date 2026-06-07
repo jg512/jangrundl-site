@@ -91,7 +91,7 @@ layout: default
         <div class="cv-when">Feb 2026 – Present</div>
         <div class="cv-what">
           <h4 class="cv-title">Graduate Research Assistant</h4>
-          <div class="cv-org">Fraunhofer IGD / Univ. Rostock</div>
+          <div class="cv-org"><a href="https://ki-tierwohl.de/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(61,122,84,0.3); transition: text-decoration-color 0.2s;">Fraunhofer IGD</a> / <a href="https://www.uni-rostock.de/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(61,122,84,0.3); transition: text-decoration-color 0.2s;">Univ. Rostock</a></div>
           <ul class="cv-desc">
             <li>Built an IoT sensor system (Arduino, Raspberry Pi) for the early detection of respiratory illness in calves.</li>
             <li>Developed ML pipelines in PyTorch and OpenCV, annotated data with CVAT, and ran field evaluations.</li>
@@ -103,7 +103,7 @@ layout: default
         <div class="cv-when">Dec 2025 – Present</div>
         <div class="cv-what">
           <h4 class="cv-title">Graduate Research Assistant</h4>
-          <div class="cv-org">Chair of Software Engineering, Univ. Rostock</div>
+          <div class="cv-org"><a href="https://www.swe.uni-rostock.de/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(61,122,84,0.3); transition: text-decoration-color 0.2s;">Chair of Software Engineering, Univ. Rostock</a></div>
           <ul class="cv-desc">
             <li>Designed a semi-autonomous LLM agent (ReAct prompting, tool use) that generates UML class diagrams.</li>
             <li>Built the dataset and implemented the system in Python and the Hugging Face ecosystem.</li>
@@ -115,7 +115,7 @@ layout: default
         <div class="cv-when">Nov 2025 – May 2026</div>
         <div class="cv-what">
           <h4 class="cv-title">Working Student, AI</h4>
-          <div class="cv-org">Ossinity GmbH</div>
+          <div class="cv-org"><a href="https://ossinity.de/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(61,122,84,0.3); transition: text-decoration-color 0.2s;">Ossinity GmbH</a></div>
           <ul class="cv-desc">
             <li>Annotated MRI scans in 3D Slicer for AI-based breast cancer detection.</li>
             <li>Owned quality assurance: testing, bug-fixing, and model validation.</li>
@@ -228,35 +228,73 @@ layout: default
         </div>
       </div>
 
-      <!-- Summer of Solutions -->
+      <!-- Aline AI Core -->
       <div class="project-card reveal" style="transition-delay: 0.1s">
-        <div class="project-img" style="background: #f0ebe0;">
-          <span class="project-icon">🚚</span>
-        </div>
-        <div class="project-info">
-          <div class="project-category">Lead &middot; Apr 2026 – Oct 2026</div>
-          <div class="project-name" style="color: var(--ink);">Summer of Solutions</div>
-          <div class="project-desc">Leading a master's-level team to optimise Nordwasser's fleet of 200 vehicles using telematics and cost-benefit analysis.</div>
-          <div class="project-tech">
-            <span class="tech-badge">Architecture</span>
-            <span class="tech-badge">Telematics</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI Hackathon -->
-      <div class="project-card reveal" style="transition-delay: 0.2s">
         <div class="project-img" style="background: #e0e8f0;">
           <span class="project-icon">🧠</span>
         </div>
         <div class="project-info">
           <div class="project-category">Hackathon &middot; Apr 2026</div>
           <div class="project-name" style="color: var(--ink);">Aline AI Core</div>
-          <div class="project-desc">Top-3 finish at Cheftreff. An AI assistant that turns business requirements into concrete developer tasks and PRs.</div>
+          <div class="project-desc">Top-3 finish. An AI assistant that turns business requirements into concrete developer tasks and PRs. Built for the Finanz Informatik hackathon.</div>
           <div class="project-tech">
-            <span class="tech-badge">AI Assistant</span>
-            <span class="tech-badge">Automation</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">LLM Agents</span>
           </div>
+          <a href="https://github.com/jg512/Hackathon-FLS-2026" target="_blank" class="view-all" style="margin-top: 1rem; align-self: flex-start;">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- ArbiterMed-MCP -->
+      <div class="project-card reveal" style="transition-delay: 0.2s">
+        <div class="project-img" style="background: #f0ebe0;">
+          <span class="project-icon">⚕️</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Research Agent &middot; Apr 2026</div>
+          <div class="project-name" style="color: var(--ink);">ArbiterMed-MCP</div>
+          <div class="project-desc">Transforms Gemini into a specialized medical consultant via a zero-dependency MCP server. Features structured statistical extraction.</div>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">MCP</span>
+            <span class="tech-badge">Gemini</span>
+          </div>
+          <a href="https://github.com/jg512/ArbiterMed-MCP" target="_blank" class="view-all" style="margin-top: 1rem; align-self: flex-start;">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- nano-gpt2 -->
+      <div class="project-card reveal" style="margin-top: 1.5rem;">
+        <div class="project-img" style="background: #e8e0f0;">
+          <span class="project-icon">⚡</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Educational &middot; Apr 2026</div>
+          <div class="project-name" style="color: var(--ink);">nano-gpt2</div>
+          <div class="project-desc">GPT-2-style language model built from scratch in PyTorch. Implements token/positional embeddings and causal multi-head self-attention.</div>
+          <div class="project-tech">
+            <span class="tech-badge">PyTorch</span>
+            <span class="tech-badge">Transformers</span>
+          </div>
+          <a href="https://github.com/jg512/nano-gpt2" target="_blank" class="view-all" style="margin-top: 1rem; align-self: flex-start;">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- ESP32 P2P Chat -->
+      <div class="project-card reveal" style="transition-delay: 0.1s; margin-top: 1.5rem;">
+        <div class="project-img" style="background: #ece5d6;">
+          <span class="project-icon">📡</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Hardware &middot; Apr 2026</div>
+          <div class="project-name" style="color: var(--ink);">ESP32 P2P Chat</div>
+          <div class="project-desc">A fully autonomous, encrypted chat system between two ESP32 devices—no Wi-Fi router, internet, or external infrastructure required.</div>
+          <div class="project-tech">
+            <span class="tech-badge">C</span>
+            <span class="tech-badge">ESP32</span>
+            <span class="tech-badge">Cryptography</span>
+          </div>
+          <a href="https://github.com/jg512/esp32-p2p-chat" target="_blank" class="view-all" style="margin-top: 1rem; align-self: flex-start;">View on GitHub →</a>
         </div>
       </div>
     </div>
