@@ -126,7 +126,7 @@ layout: default
 </section>
 
 <!-- PURSUITS -->
-<section class="about" id="pursuits" style="background: var(--cream);">
+<section class="vita" id="pursuits" style="background: var(--cream);">
   <div class="container">
     <div class="vita-header">
       <div class="reveal">
@@ -134,18 +134,52 @@ layout: default
         <h2 class="section-title">What I'm Doing Now</h2>
       </div>
     </div>
-    <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); background: transparent; border: none; gap: 2rem;">
-      <div class="stat reveal" style="background: var(--white); padding: 2.5rem;">
-        <div class="stat-num" style="font-size: 1.5rem; margin-bottom: 1rem;">Building in the Open</div>
-        <p class="about-text" style="font-size: 0.9rem;">I contribute to NALA-AI, an open platform that turns cheap sensors into live maps of Germany's rivers.</p>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-img" style="background: #e8f0eb;">
+          <span class="project-icon">🌊</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Open Source</div>
+          <div class="project-name">Building in the Open</div>
+          <div class="project-desc">I contribute to NALA-AI, an open platform that turns cheap sensors into live maps of Germany's rivers. The work is equal parts code, plumbing, and persuasion.</div>
+          <div class="project-tech">
+            <span class="tech-badge">IoT</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Community</span>
+          </div>
+        </div>
       </div>
-      <div class="stat reveal" style="background: var(--white); padding: 2.5rem;">
-        <div class="stat-num" style="font-size: 1.5rem; margin-bottom: 1rem;">Teaching the Next Ones</div>
-        <p class="about-text" style="font-size: 0.9rem;">I run online STEM courses for kids who might never otherwise see a line of code, through the GI's BYTE Challenge.</p>
+
+      <div class="project-card reveal" style="transition-delay: 0.1s">
+        <div class="project-img" style="background: #f0ebe0;">
+          <span class="project-icon">🍎</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Volunteering</div>
+          <div class="project-name">Teaching the Next Ones</div>
+          <div class="project-desc">I run online STEM courses for kids who might never otherwise see a line of code, through the GI's BYTE Challenge.</div>
+          <div class="project-tech">
+            <span class="tech-badge">Education</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">STEM</span>
+          </div>
+        </div>
       </div>
-      <div class="stat reveal" style="background: var(--white); padding: 2.5rem;">
-        <div class="stat-num" style="font-size: 1.5rem; margin-bottom: 1rem;">Sport & Outdoors</div>
-        <p class="about-text" style="font-size: 0.9rem;">I train regularly. It clears my head and makes the long evenings of reading feel earned.</p>
+
+      <div class="project-card reveal" style="transition-delay: 0.2s">
+        <div class="project-img" style="background: #e0e8f0;">
+          <span class="project-icon">🏃</span>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Lifestyle</div>
+          <div class="project-name">Sport & the Outdoors</div>
+          <div class="project-desc">I train regularly. It clears my head and makes the long evenings of reading feel earned.</div>
+          <div class="project-tech">
+            <span class="tech-badge">Fitness</span>
+            <span class="tech-badge">Balance</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -160,23 +194,42 @@ layout: default
         <h2 class="section-title">On the Shelf</h2>
       </div>
     </div>
-    <div class="about-grid">
-        <div class="reveal">
-            <div class="about-text">
-                <p>Worlds I keep going back to. Start anywhere, but keep the map handy.</p>
-                <ul style="list-style: none; margin-top: 1.5rem;">
-                    <li style="margin-bottom: 1rem;"><strong style="color: var(--green-dark);">Gardens of the Moon</strong> &middot; Steven Erikson</li>
-                    <li style="margin-bottom: 1rem;"><strong style="color: var(--green-dark);">The Dwarves</strong> &middot; Markus Heitz</li>
-                    <li style="margin-bottom: 1rem;"><strong style="color: var(--green-dark);">Monarchies of God</strong> &middot; Paul Kearney</li>
-                    <li style="margin-bottom: 1rem;"><strong style="color: var(--green-dark);">Conan the Barbarian</strong> &middot; Robert E. Howard</li>
-                </ul>
-            </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-img" style="height: 280px; background: #1a1a18;">
+          <img src="https://covers.openlibrary.org/b/isbn/9780765322883-L.jpg?default=false" alt="Gardens of the Moon" style="height: 100%; width: auto; filter: none;">
         </div>
-        <div class="reveal">
-            <div class="hero-photo" style="min-height: 300px; border: 1px solid var(--cream-dark);">
-                <img src="{{ '/assets/img/badge.jpg' | relative_url }}" alt="Conference Badge" style="filter: none;">
-            </div>
+        <div class="project-info">
+          <div class="project-category">Fantasy &middot; Steven Erikson</div>
+          <div class="project-name">Gardens of the Moon</div>
+          <div class="project-desc">I'm reading this now. Erikson drops you into the middle of a history and trusts you to keep up.</div>
+          <div class="project-tech">
+            <span class="tech-badge">Now Reading</span>
+          </div>
         </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay: 0.1s">
+        <div class="project-img" style="height: 280px; background: #2a3a2c;">
+          <img src="https://covers.openlibrary.org/b/isbn/9780316049443-L.jpg?default=false" alt="The Dwarves" style="height: 100%; width: auto; filter: none;">
+        </div>
+        <div class="project-info">
+          <div class="project-category">Fantasy &middot; Markus Heitz</div>
+          <div class="project-name">The Dwarves</div>
+          <div class="project-desc">Tungdil, Girdlegard, and some of the best axe-work in fantasy. A whole series I keep coming back to.</div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay: 0.2s">
+        <div class="project-img" style="height: 280px; background: #3a2a24;">
+          <img src="https://covers.openlibrary.org/b/isbn/9781906735715-L.jpg?default=false" alt="Monarchies of God" style="height: 100%; width: auto; filter: none;">
+        </div>
+        <div class="project-info">
+          <div class="project-category">Fantasy &middot; Paul Kearney</div>
+          <div class="project-name">Monarchies of God</div>
+          <div class="project-desc">Kings, heretics, and a voyage west. Kearney writes faith and war with a maturity you don't often get.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
