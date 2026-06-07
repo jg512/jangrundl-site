@@ -7,6 +7,7 @@ gem "github-pages", group: :jekyll_plugins
 # Plugins (also bundled by github-pages, listed here for clarity)
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
+gem "jekyll-sitemap"
 
 # Helps on newer Ruby versions
 gem "webrick", "~> 1.8"
