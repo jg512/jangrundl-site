@@ -6,15 +6,15 @@ permalink: /journal/
 ---
 
 <section class="page-head">
-  <div class="wrap">
-    <div class="kicker solo" style="justify-content:center;">The Journal</div>
+  <div class="container">
+    <span class="section-label">The Journal</span>
     <h2 class="section-title">Notes &amp; Writing</h2>
-    <p class="lead" style="margin:0 auto;">Things I'm building, reading, and thinking about. Loosely kept, and added to whenever something is worth writing down.</p>
+    <p class="hero-sub" style="margin:0 auto; color: rgba(255,255,255,0.6);">Things I'm building, reading, and thinking about. Loosely kept, and added to whenever something is worth writing down.</p>
   </div>
 </section>
 
 <section class="journal-index">
-  <div class="wrap">
+  <div class="container">
     {% if site.posts.size > 0 %}
 
       {% assign all_tags = site.tags | sort %}
@@ -36,20 +36,20 @@ permalink: /journal/
         {% assign current_year = post_year %}
         {% endif %}
         <a class="j-entry reveal" href="{{ post.url | relative_url }}" data-tags="{% for t in post.tags %}{{ t | downcase }} {% endfor %}" data-year="{{ post_year }}">
-          <span class="j-date">{{ post.date | date: "%d %b %Y" }}{% assign w = post.content | number_of_words %}{% assign rt = w | divided_by: 230 | plus: 1 %}<span class="j-rt">{{ rt }} min read</span></span>
+          <span class="j-date">{{ post.date | date: "%d %b %Y" }}</span>
           <span>
             <h3 class="j-title">{{ post.title }}</h3>
             <p class="j-ex">{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncatewords: 34 }}{% endif %}</p>
-            {% if post.tags.size > 0 %}<span class="tags">{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}</span>{% endif %}
+            {% if post.tags.size > 0 %}<div class="tags">{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
           </span>
           <span class="j-go">Read</span>
         </a>
         {% endfor %}
       </div>
-      <p class="empty-note" id="no-match" style="display:none;">Nothing under that tag yet.</p>
+      <p class="empty-note" id="no-match" style="display:none; text-align:center; margin-top: 3rem;">Nothing under that tag yet.</p>
 
     {% else %}
-      <p class="empty-note">No entries yet. Add a markdown file to <code>_posts/</code> to begin.</p>
+      <p class="empty-note" style="text-align:center; margin-top: 3rem;">No entries yet. Add a markdown file to <code>_posts/</code> to begin.</p>
     {% endif %}
   </div>
 </section>
