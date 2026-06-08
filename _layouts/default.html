@@ -25,7 +25,22 @@
     <li><a href="{{ '/' | relative_url }}#volunteer">Volunteer</a></li>
     <li><a href="{{ '/journal/' | relative_url }}">Journal</a></li>
   </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="menu-overlay">
+  <ul class="menu-links">
+    <li><a href="{{ '/' | relative_url }}#about">About</a></li>
+    <li><a href="{{ '/' | relative_url }}#cv">CV</a></li>
+    <li><a href="{{ '/' | relative_url }}#projects">Projects</a></li>
+    <li><a href="{{ '/' | relative_url }}#volunteer">Volunteer</a></li>
+    <li><a href="{{ '/journal/' | relative_url }}">Journal</a></li>
+  </ul>
+</div>
 
 {{ content }}
 
@@ -36,11 +51,55 @@
 </footer>
 
 <script>
+  // --- Mobile Menu Toggle ---
+  const navToggle = document.querySelector('.nav-toggle');
+  const menuOverlay = document.querySelector('.menu-overlay');
+  const menuLinks = document.querySelectorAll('.menu-links a');
+
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
+
+  // --- Easter Eggs ---
+  console.log("%cAh, a fellow developer.", "color: #c8a96e; font-size: 16px; font-weight: bold;");
+  console.log("%cIf you're reading this, we should talk: janvictorninogrundl@gmail.com", "color: #3d7a54; font-size: 14px;");
+
+  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let konamiIndex = 0;
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        document.documentElement.style.setProperty('--cream', '#000000');
+        document.documentElement.style.setProperty('--white', '#0a0a0a');
+        document.documentElement.style.setProperty('--ink', '#00ff00');
+        document.documentElement.style.setProperty('--ink-soft', '#00cc00');
+        document.documentElement.style.setProperty('--green-dark', '#051105');
+        document.documentElement.style.setProperty('--green-mid', '#00ff00');
+        document.body.style.fontFamily = 'monospace';
+        console.log("System override: Terminal mode activated.");
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
 </script>
 </body>
 </html>
