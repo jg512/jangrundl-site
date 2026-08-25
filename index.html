@@ -435,21 +435,19 @@
     .cv-desc li::marker { color: var(--border-strong); }
 
     /* ---------- CONTACT ---------- */
-    .field {
-      width: 100%;
-      font: inherit;
-      font-size: 0.9rem;
-      color: var(--ink);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 0.55rem;
-      padding: 0.75rem 0.9rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    .contact-mail {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-strong);
+      padding-bottom: 0.15rem;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      word-break: break-word;
     }
-    .field::placeholder { color: var(--muted); }
-    .field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
-    textarea.field { resize: vertical; min-height: 8rem; margin-bottom: 1rem; }
+    .contact-mail:hover { color: var(--ink); border-bottom-color: var(--accent); }
 
     footer {
       border-top: 1px solid var(--border);
@@ -475,7 +473,7 @@
       .nav-toggle { display: inline-flex; }
       section { padding: 3.5rem 0; }
       .hero { padding: 7rem 0 3.5rem; }
-      .grid-2, .grid-3, .field-row { grid-template-columns: 1fr; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .cv-entry { grid-template-columns: 1fr; gap: 0.35rem; padding: 1.25rem 0; }
       .logos { gap: 1.4rem 2rem; }
       .logo-link img { height: 1.6rem; }
@@ -973,16 +971,9 @@
   <div class="wrap">
     <span class="section-label" data-i18n="contact.label">Contact</span>
     <h2 class="section-title tight" data-i18n="contact.title">Get in touch</h2>
-    <p class="prose" style="margin-bottom:2rem" data-i18n="contact.desc">Write to me about a project, a research idea, a job, or an argument about fantasy books. I am based in Rostock and happy to work remotely.</p>
+    <p class="prose" style="margin-bottom:2rem" data-i18n="contact.desc">If you want to get in touch, just write me. A project, a research idea, a job, or an argument about fantasy books are all welcome. I am based in Rostock and happy to work remotely.</p>
 
-    <form id="contactForm" style="max-width:38rem">
-      <div class="field-row">
-        <input class="field" type="text" id="nameInput" required placeholder="Name" data-i18n-ph="contact.name" />
-        <input class="field" type="email" id="emailInput" required placeholder="Email" data-i18n-ph="contact.email" />
-      </div>
-      <textarea class="field" id="messageInput" rows="5" required placeholder="Message" data-i18n-ph="contact.message"></textarea>
-      <button class="btn btn-primary" type="submit" data-i18n="contact.btn">Send message</button>
-    </form>
+    <a class="contact-mail" href="mailto:janvictorninogrundl@gmail.com">janvictorninogrundl@gmail.com</a>
   </div>
 </section>
 
@@ -1323,11 +1314,7 @@
       "books.monarchies.desc": "Paul Kearney&rsquo;s gunpowder fantasy about war, religion and discovery.",
       "contact.label": "Contact",
       "contact.title": "Get in touch",
-      "contact.desc": "Write to me about a project, a research idea, a job, or an argument about fantasy books. I am based in Rostock and happy to work remotely.",
-      "contact.name": "Name",
-      "contact.email": "Email",
-      "contact.message": "Message",
-      "contact.btn": "Send message",
+      "contact.desc": "If you want to get in touch, just write me. A project, a research idea, a job, or an argument about fantasy books are all welcome. I am based in Rostock and happy to work remotely.",
       "footer.text": "&copy; 2026 Jan Victornino Grundl, Rostock"
     },
     de: {
@@ -1454,11 +1441,7 @@
       "books.monarchies.desc": "Paul Kearneys Gunpowder-Fantasy &uuml;ber Krieg, Religion und Entdeckung.",
       "contact.label": "Kontakt",
       "contact.title": "Melden Sie sich",
-      "contact.desc": "Schreiben Sie mir wegen eines Projekts, einer Forschungsidee, eines Jobs oder einer Diskussion &uuml;ber Fantasy-B&uuml;cher. Ich sitze in Rostock und arbeite gern remote.",
-      "contact.name": "Name",
-      "contact.email": "E-Mail",
-      "contact.message": "Nachricht",
-      "contact.btn": "Nachricht senden",
+      "contact.desc": "Wenn Sie Kontakt aufnehmen m&ouml;chten, schreiben Sie mir einfach. Ob Projekt, Forschungsidee, Job oder eine Diskussion &uuml;ber Fantasy-B&uuml;cher. Ich sitze in Rostock und arbeite gern remote.",
       "footer.text": "&copy; 2026 Jan Victornino Grundl, Rostock"
     }
   };
@@ -1498,16 +1481,6 @@
   try { savedLang = localStorage.getItem('lang'); } catch (e) {}
   setLanguage(urlLang || savedLang || ((navigator.language || '').toLowerCase().indexOf('de') === 0 ? 'de' : 'en'));
 
-  /* ============ contact form ============ */
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var subject = currentLang === 'de' ? 'Kontaktanfrage über jangrundl.de' : 'Message from jangrundl.de';
-    var body = 'Name: ' + document.getElementById('nameInput').value.trim() +
-      '\nEmail: ' + document.getElementById('emailInput').value.trim() +
-      '\n\n' + document.getElementById('messageInput').value.trim();
-    window.location.href = 'mailto:janvictorninogrundl@gmail.com?subject=' +
-      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
 })();
 </script>
 
