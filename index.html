@@ -49,7 +49,7 @@
       --topo-line: 0.075;
       --topo-index: 0.16;
       --shadow: 0 1px 2px rgba(25, 25, 23, 0.04), 0 10px 30px -18px rgba(25, 25, 23, 0.35);
-      --logo-filter: grayscale(1) opacity(0.5);
+      --logo-filter: grayscale(1) contrast(0.55) brightness(0.72) opacity(0.92);
       --logo-filter-hover: grayscale(0) opacity(1);
       --nav-bg: rgba(251, 250, 248, 0.85);
     }
@@ -70,8 +70,8 @@
       --topo-line: 0.09;
       --topo-index: 0.2;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px -18px rgba(0, 0, 0, 0.9);
-      --logo-filter: grayscale(1) invert(1) opacity(0.6);
-      --logo-filter-hover: grayscale(1) invert(1) opacity(0.95);
+      --logo-filter: grayscale(1) invert(1) contrast(0.55) brightness(1.3) opacity(0.92);
+      --logo-filter-hover: grayscale(1) invert(1) brightness(1.15) opacity(1);
       --nav-bg: rgba(13, 14, 13, 0.85);
     }
 
@@ -215,9 +215,10 @@
       border-bottom: 1px solid var(--border);
       padding: 0.5rem 1.5rem 1.25rem;
       transform: translateY(-125%);
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      visibility: hidden;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.3s;
     }
-    .menu.open { transform: translateY(0); }
+    .menu.open { transform: translateY(0); visibility: visible; transition-delay: 0s, 0s; }
     .menu ul { list-style: none; }
     .menu a {
       display: block;
@@ -232,14 +233,14 @@
     /* ---------- HERO ---------- */
     .hero {
       position: relative;
-      padding: 9.5rem 0 5rem;
+      padding: 6rem 0 4.5rem;
       border-bottom: 1px solid var(--border);
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 3fr 2fr;
       gap: 4rem;
-      align-items: center;
+      align-items: start;
     }
     .kicker {
       font-family: 'Inter', sans-serif;
@@ -342,25 +343,55 @@
       margin-bottom: 0.35rem;
     }
 
+    /* Sections whose body is a single narrow column left a tall empty band down
+       the right side. These put something useful in it instead. */
+    .split { display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start; }
+    .split > .prose { max-width: none; }
+    .side .stack:first-child { margin-top: 0; }
+
+    .beyond-top { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 1.5rem; align-items: center; }
+    .beyond-top .prose { max-width: none; }
+    .beyond-top img { height: 13rem; margin: 0; }
+
+    .contact-split { display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start; }
+    .contact-side { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--muted); }
+    .contact-side .stack:first-child { margin-top: 0; }
+
     /* ---------- ORGS ---------- */
-    .logos { display: flex; flex-wrap: wrap; align-items: center; gap: 2.4rem 3.6rem; }
-    .logo-link { display: inline-flex; align-items: center; text-decoration: none; color: var(--muted); }
+    /* Twelve logos in a six-column grid: two full rows, nothing orphaned.
+       Every cell is the same box, so optical weight comes from the box and not
+       from how wide a given wordmark happens to be. */
+    .logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.6rem 2rem; align-items: center; justify-items: center; }
+    .logos.logos-hack { grid-template-columns: repeat(4, 1fr); }
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      height: 3.4rem;
+      max-width: 100%;
+      text-decoration: none;
+      color: var(--muted);
+    }
     .logo-link img {
-      height: 2.75rem;
+      height: 2.5rem;
       width: auto;
-      max-width: 13rem;
+      max-width: 100%;
       object-fit: contain;
       filter: var(--logo-filter);
       transition: filter 0.25s ease, transform 0.25s ease;
     }
     /* square-ish marks need more height than wordmarks to carry the same weight */
-    .logo-link.is-mark img { height: 3.5rem; }
-    .logo-link.is-wide img { max-width: 17rem; }
+    .logo-link.is-mark img { height: 3rem; }
+    .logo-link.is-wide img { height: 2.2rem; }
+    /* a bare mark carries no name, so it gets one */
+    .logo-link.is-named img { height: 2.2rem; flex: none; }
     .logo-link:hover img { filter: var(--logo-filter-hover); transform: translateY(-1px); }
     .logo-text {
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.78rem;
       font-weight: 500;
+      line-height: 1.25;
       transition: color 0.2s ease;
     }
     .logo-link:hover .logo-text { color: var(--ink); }
@@ -377,7 +408,9 @@
     .partners + .partners { margin-top: 0.7rem; }
     .partners a { white-space: nowrap; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
     .partners a:hover { color: var(--ink); border-bottom-color: var(--border-strong); }
-    .partners .sep { padding: 0 0.45rem; opacity: 0.55; }
+    /* The separator lives inside the (nowrap) link, so it can never be left
+       dangling at the end of a line the way a free-standing middot was. */
+    .partners a:not(:last-of-type)::after { content: ","; }
     .partners .partners-kind { color: var(--muted); font-weight: 500; }
 
     /* ---------- CARDS ---------- */
@@ -412,6 +445,12 @@
       background: var(--band);
     }
     .card-media.tall { height: 11rem; object-position: top; }
+    /* Two- and three-column work cards are wide, so 9rem letterboxes them badly. */
+    #projects .card-media, #volunteering .card-media { height: 11rem; }
+    /* Cover art is the most saturated thing on the page; pull it back so the
+       hobbies stop out-shouting the work. */
+    #beyond .card .card-media { filter: saturate(0.62); transition: filter 0.25s ease; }
+    #beyond .card:hover .card-media { filter: saturate(1); }
 
     /* ---------- CV ---------- */
     .cv-entry {
@@ -464,12 +503,25 @@
     .footer-links a { text-decoration: none; transition: color 0.2s ease; }
     .footer-links a:hover { color: var(--ink); }
 
+    .credits { margin-bottom: 1.75rem; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); }
+    .credits summary { cursor: pointer; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .credits summary:hover { color: var(--ink-soft); }
+    .credits ul { list-style: none; margin-top: 0.9rem; columns: 2; column-gap: 2.5rem; }
+    .credits li { break-inside: avoid; margin-bottom: 0.4rem; line-height: 1.55; }
+    .credits b { font-weight: 600; color: var(--ink-soft); }
+    .credits a { color: inherit; text-decoration: underline; text-decoration-color: var(--border-strong); text-underline-offset: 2px; }
+    .credits a:hover { color: var(--ink); }
+
     ::selection { background: var(--accent); color: var(--accent-ink); }
 
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .hero-photo { max-width: 20rem; }
       .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .logos { grid-template-columns: repeat(4, 1fr); }
+      .split, .contact-split { grid-template-columns: 1fr; gap: 2rem; }
+      .beyond-top { grid-template-columns: 1fr 1fr; }
+      .beyond-top .prose { grid-column: 1 / -1; }
     }
     @media (max-width: 720px) {
       .nav-links, .nav .btn { display: none; }
@@ -478,9 +530,14 @@
       .hero { padding: 7rem 0 3.5rem; }
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .cv-entry { grid-template-columns: 1fr; gap: 0.35rem; padding: 1.25rem 0; }
-      .logos { gap: 1.4rem 2rem; }
-      .logo-link img { height: 1.6rem; }
-      .logo-link.is-mark img { height: 2.05rem; }
+      .logos, .logos.logos-hack { grid-template-columns: repeat(2, 1fr); gap: 1.6rem 1.2rem; }
+      .logo-link { height: 2.6rem; gap: 0.4rem; }
+      .logo-link img { height: 1.7rem; }
+      .logo-link.is-mark img { height: 2.1rem; }
+      .logo-link.is-named img { height: 1.5rem; }
+      .beyond-top { grid-template-columns: 1fr; }
+      .credits ul { columns: 1; }
+      .beyond-top img { height: 11rem; }
       .consortium { margin-top: 2.2rem; padding-top: 1.6rem; }
       .partners { font-size: 0.8rem; line-height: 1.85; }
       .partners .sep { padding: 0 0.3rem; }
@@ -605,20 +662,19 @@
       <a class="logo-link" href="https://www.fbn-dummerstorf.de/" target="_blank" rel="noopener noreferrer" title="Forschungsinstitut für Nutztierbiologie">
         <img src="assets/img/logos/fbn.svg" alt="FBN Dummerstorf" />
       </a>
-      <a class="logo-link is-mark" href="https://www.hohe-duene.de/" target="_blank" rel="noopener noreferrer" title="Yachthafenresidenz Hohe Düne">
-        <img src="assets/img/logos/hohe-duene.png" alt="Yachthafenresidenz Hohe Düne" />
+      <a class="logo-link is-named" href="https://www.hohe-duene.de/" target="_blank" rel="noopener noreferrer" title="Yachthafenresidenz Hohe Düne">
+        <img src="assets/img/logos/hohe-duene.png" alt="" />
+        <span class="logo-text">Hohe D&uuml;ne</span>
       </a>
-      <a class="logo-link is-mark" href="https://de.linkedin.com/company/ossinity" target="_blank" rel="noopener noreferrer" title="Ossinity GmbH">
-        <img src="assets/img/logos/ossinity.png" alt="Ossinity GmbH" />
+      <a class="logo-link is-named" href="https://de.linkedin.com/company/ossinity" target="_blank" rel="noopener noreferrer" title="Ossinity GmbH">
+        <img src="assets/img/logos/ossinity.png" alt="" />
+        <span class="logo-text">Ossinity</span>
       </a>
       <a class="logo-link" href="https://byte-challenge.de/" target="_blank" rel="noopener noreferrer" title="BYTE Challenge">
         <img src="assets/img/logos/byte.png" alt="BYTE Challenge" />
       </a>
       <a class="logo-link" href="https://gi.de/" target="_blank" rel="noopener noreferrer" title="Gesellschaft für Informatik">
         <img src="assets/img/logos/gi.png" alt="Gesellschaft für Informatik" />
-      </a>
-      <a class="logo-link is-mark" href="https://www.nala-ai.org/" target="_blank" rel="noopener noreferrer" title="NALA-AI">
-        <img src="assets/img/logos/nala.png" alt="NALA-AI" />
       </a>
       <a class="logo-link is-mark" href="https://www.thefutureliving.com/" target="_blank" rel="noopener noreferrer" title="The Future Living">
         <img src="assets/img/logos/future-living.png" alt="The Future Living" />
@@ -630,7 +686,7 @@
 
     <div class="consortium">
       <span class="section-label" data-i18n="orgs.hackathons">Hackathon cases I have worked on</span>
-      <div class="logos" style="gap:2rem 3rem">
+      <div class="logos logos-hack">
         <a class="logo-link is-wide" href="https://www.f-i.de/" target="_blank" rel="noopener noreferrer" title="Finanz Informatik">
           <img src="assets/img/logos/finanz-informatik.svg" alt="Finanz Informatik" />
         </a>
@@ -650,27 +706,18 @@
       <span class="section-label" data-i18n="orgs.consortium">KI-Tierwohl research consortium</span>
       <p class="partners">
         <a href="https://experimentelle-chirurgie.med.uni-rostock.de/" target="_blank" rel="noopener noreferrer">Universit&auml;tsmedizin Rostock (IEC)</a>
-<span class="sep">&middot;</span>
         <a href="https://www.fbn-dummerstorf.de/" target="_blank" rel="noopener noreferrer">Forschungsinstitut f&uuml;r Nutztierbiologie</a>
-<span class="sep">&middot;</span>
         <a href="https://www.auf.uni-rostock.de/" target="_blank" rel="noopener noreferrer">Universit&auml;t Rostock (AUF)</a>
-<span class="sep">&middot;</span>
         <a href="https://www.ief.uni-rostock.de/" target="_blank" rel="noopener noreferrer">Universit&auml;t Rostock (IEF)</a>
-<span class="sep">&middot;</span>
         <a href="https://www.hs-nb.de/" target="_blank" rel="noopener noreferrer">Hochschule Neubrandenburg</a>
-<span class="sep">&middot;</span>
         <a href="https://www.fli.de/" target="_blank" rel="noopener noreferrer">Friedrich-Loeffler-Institut</a>
-<span class="sep">&middot;</span>
         <a href="https://www.uni-greifswald.de/" target="_blank" rel="noopener noreferrer">Universit&auml;t Greifswald</a>
       </p>
       <p class="partners">
         <span class="partners-kind" data-i18n="orgs.associated">Associated partners:</span>
         <a href="https://www.igd.fraunhofer.de/" target="_blank" rel="noopener noreferrer">Fraunhofer IGD</a>
-<span class="sep">&middot;</span>
         <a href="https://www.helmholtz-hioh.de/" target="_blank" rel="noopener noreferrer">Helmholtz-Institut f&uuml;r One Health</a>
-<span class="sep">&middot;</span>
         <a href="https://www.bioconvalley.org/" target="_blank" rel="noopener noreferrer">BioCon Valley</a>
-<span class="sep">&middot;</span>
         <a href="https://www.lmu.de/" target="_blank" rel="noopener noreferrer">LMU M&uuml;nchen</a>
       </p>
     </div>
@@ -682,18 +729,22 @@
   <div class="wrap">
     <span class="section-label" data-i18n="about.label">About</span>
     <h2 class="section-title tight" data-i18n="about.title">Background</h2>
-    <div class="prose">
+    <div class="split">
+      <div class="prose">
       <p data-i18n="about.p1">I finished my B.Sc. in computer science at the University of Rostock in 2025 and stayed on for the master&rsquo;s, with a focus on AI and software engineering. The bachelor took me longer than the standard seven semesters, because I was working alongside it to help support my family.</p>
       <p data-i18n="about.p2">I write Python and PyTorch for the machine learning side, Django and PostgreSQL for backends, and C or C++ when the target is an ESP32 or a Raspberry Pi. The part I like most is the seam between them: turning a noisy sensor reading into something a system can actually act on.</p>
       <p data-i18n="about.p3">I have also taught on and off since 2023, running tutorials for prospective students in the university&rsquo;s Junior Study programme and volunteering for STEM courses at BYTE Challenge.</p>
-      <div class="stack">
-        <b data-i18n="about.langLabel">Languages</b>
-        <span data-i18n="about.lang">German (native), English (C1), Spanish (basic).</span>
       </div>
-      <div class="stack">
-        <b data-i18n="about.stackLabel">Usually working with</b>
-        <span data-i18n="about.stack">Python, PyTorch, OpenCV, TypeScript, C and C++, Django, PostgreSQL, ESP32 and Raspberry Pi, Docker, Git.</span>
-      </div>
+      <aside class="side">
+        <div class="stack">
+          <b data-i18n="about.langLabel">Languages</b>
+          <span data-i18n="about.lang">German (native), English (C1), Spanish (basic).</span>
+        </div>
+        <div class="stack">
+          <b data-i18n="about.stackLabel">Usually working with</b>
+          <span data-i18n="about.stack">Python, PyTorch, OpenCV, TypeScript, C and C++, Django, PostgreSQL, ESP32 and Raspberry Pi, Docker, Git.</span>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -706,6 +757,7 @@
 
     <div class="grid grid-2">
       <article class="card">
+        <img class="card-media" src="assets/img/cards/fablr.jpg" alt="A wall of library bookshelves" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>fablr</h3>
           <span class="card-meta" data-i18n="proj.fablr.meta">Mobile app, 2026</span>
@@ -714,6 +766,17 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/nordwasser.jpg" alt="The gatehouse of a German waterworks" loading="lazy" width="900" height="375" />
+        <div class="card-head">
+          <h3 data-i18n="proj.nordwasser.title">Nordwasser telematics</h3>
+          <span class="card-meta" data-i18n="proj.nordwasser.meta">Student consulting</span>
+        </div>
+        <p data-i18n="proj.nordwasser.desc">A student transfer project with Nordwasser GmbH: a vendor-independent telematics concept for 138 vehicles over OBD dongles, delivered as a 40-page specification with a cost-benefit calculation and rollout plan.</p>
+        <div class="card-foot"><a class="card-link" href="https://www.nordwasser.de/" target="_blank" rel="noopener noreferrer">nordwasser.de</a></div>
+      </article>
+
+      <article class="card">
+        <img class="card-media" src="assets/img/cards/care.jpg" alt="A patient monitor showing vital-sign waveforms" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3 data-i18n="proj.care.title">Vitals from video</h3>
           <span class="card-meta" data-i18n="proj.care.meta">Hackathon, Jul 2026</span>
@@ -723,6 +786,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/aline.jpg" alt="Source code on a computer monitor" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>Aline AI Core</h3>
           <span class="card-meta" data-i18n="proj.aline.meta">Hackathon, Apr 2026</span>
@@ -732,6 +796,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/iot.jpg" alt="A calf standing in a barn" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3 data-i18n="proj.iot.title">Calf health sensing</h3>
           <span class="card-meta" data-i18n="proj.iot.meta">Research, ongoing</span>
@@ -741,6 +806,16 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/omnet.jpg" alt="Ethernet switches and patch panels in a rack" loading="lazy" width="900" height="375" />
+        <div class="card-head">
+          <h3 data-i18n="proj.omnet.title">OMNeT++ network simulation</h3>
+          <span class="card-meta" data-i18n="proj.omnet.meta">Network modelling, 2025</span>
+        </div>
+        <p data-i18n="proj.omnet.desc">Discrete-event simulation of a protocol under load in OMNeT++, measuring throughput and latency instead of guessing at them &mdash; the same modelling a sensor network needs before it is trusted to scale. Built as a university project.</p>
+      </article>
+
+      <article class="card">
+        <img class="card-media" src="assets/img/cards/arbiter.jpg" alt="A stethoscope on a plain background" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>ArbiterMed-MCP</h3>
           <span class="card-meta" data-i18n="proj.arbiter.meta">Agent tooling, Apr 2026</span>
@@ -750,6 +825,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/nano.jpg" alt="A neural network drawn around a chip" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>nano-gpt2</h3>
           <span class="card-meta" data-i18n="proj.nano.meta">Learning project, Apr 2026</span>
@@ -759,6 +835,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/esp.jpg" alt="An ESP32 development board" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3 data-i18n="proj.esp.title">ESP32 encrypted chat</h3>
           <span class="card-meta" data-i18n="proj.esp.meta">Hardware, 2026</span>
@@ -768,6 +845,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/fritz.jpg" alt="The circuit board of a FRITZ!Box 7490" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3 data-i18n="proj.fritz.title">FRITZ!Box 7490 teardown</h3>
           <span class="card-meta" data-i18n="proj.fritz.meta">Security research, 2026</span>
@@ -777,15 +855,7 @@
       </article>
 
       <article class="card">
-        <div class="card-head">
-          <h3 data-i18n="proj.omnet.title">OMNeT++ network simulation</h3>
-          <span class="card-meta" data-i18n="proj.omnet.meta">University, 2025</span>
-        </div>
-        <p data-i18n="proj.omnet.desc">A discrete-event network simulation built in OMNeT++, modelling how a protocol behaves under load and measuring throughput and latency instead of guessing at them.</p>
-        <div class="card-foot"><span class="card-meta" data-i18n="proj.omnet.note">Coursework project</span></div>
-      </article>
-
-      <article class="card">
+        <img class="card-media" src="assets/img/cards/rfid.jpg" alt="A glass RFID transponder tag with its copper antenna coil" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>rfidpoll</h3>
           <span class="card-meta" data-i18n="proj.rfid.meta">Open source</span>
@@ -932,6 +1002,7 @@
 
     <div class="grid grid-3">
       <article class="card">
+        <img class="card-media" src="assets/img/cards/nala.jpg" alt="A stretch of the river Warnow in Mecklenburg" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>NALA-AI</h3>
           <span class="card-meta" data-i18n="vol.nala.meta">Open source</span>
@@ -941,6 +1012,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/byte.jpg" alt="A BBC micro:bit educational microcontroller board" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3>BYTE Challenge</h3>
           <span class="card-meta" data-i18n="vol.byte.meta">Teaching</span>
@@ -950,6 +1022,7 @@
       </article>
 
       <article class="card">
+        <img class="card-media" src="assets/img/cards/stura.jpg" alt="The main building of the University of Rostock" loading="lazy" width="900" height="375" />
         <div class="card-head">
           <h3 data-i18n="vol.stura.title">Student council</h3>
           <span class="card-meta" data-i18n="vol.stura.meta">University politics</span>
@@ -958,14 +1031,6 @@
         <div class="card-foot"><a class="card-link" href="https://www.asta-rostock.de/mitmachen/stura/" target="_blank" rel="noopener noreferrer">asta-rostock.de</a></div>
       </article>
 
-      <article class="card">
-        <div class="card-head">
-          <h3 data-i18n="vol.nordwasser.title">Nordwasser telematics</h3>
-          <span class="card-meta" data-i18n="vol.nordwasser.meta">Student consulting</span>
-        </div>
-        <p data-i18n="vol.nordwasser.desc">A student transfer project with Nordwasser GmbH: a vendor-independent telematics concept for 138 vehicles over OBD dongles, delivered as a 40-page specification with a cost-benefit calculation and rollout plan.</p>
-        <div class="card-foot"><a class="card-link" href="https://www.nordwasser.de/" target="_blank" rel="noopener noreferrer">nordwasser.de</a></div>
-      </article>
     </div>
   </div>
 </section>
@@ -975,11 +1040,10 @@
   <div class="wrap">
     <span class="section-label" data-i18n="beyond.label">Off screen</span>
     <h2 class="section-title tight" data-i18n="beyond.title">Beyond code</h2>
-    <p class="prose" data-i18n="beyond.intro">Conferences, long books, and dwarf colonies that end badly. I train to clear my head and read to fill it again.</p>
-
-    <div class="grid grid-2" style="margin-top:2rem">
-      <img class="card-media" style="height:16rem;margin:0" src="assets/img/candid.webp" onerror="this.onerror=null; this.src='assets/img/candid.jpg';" alt="Jan at work" loading="lazy" />
-      <img class="card-media" style="height:16rem;margin:0" src="assets/img/badge.webp" onerror="this.onerror=null; this.src='assets/img/badge.jpg';" alt="Conference badge" loading="lazy" />
+    <div class="beyond-top">
+      <p class="prose" data-i18n="beyond.intro">Conferences, long books, and dwarf colonies that end badly. I train to clear my head and read to fill it again.</p>
+      <img class="card-media" src="assets/img/candid.webp" onerror="this.onerror=null; this.src='assets/img/candid.jpg';" alt="Jan at work" loading="lazy" />
+      <img class="card-media" src="assets/img/badge.webp" onerror="this.onerror=null; this.src='assets/img/badge.jpg';" alt="Conference badge" loading="lazy" />
     </div>
 
     <h3 class="sub-title" data-i18n="beyond.games">Games</h3>
@@ -1027,13 +1091,51 @@
   <div class="wrap">
     <span class="section-label" data-i18n="contact.label">Contact</span>
     <h2 class="section-title tight" data-i18n="contact.title">Get in touch</h2>
-    <p class="prose" style="margin-bottom:2rem" data-i18n="contact.desc">If you want to get in touch, just write me. A project, a research idea, a job, or an argument about fantasy books are all welcome. I am based in Rostock and happy to work remotely.</p>
-
-    <a class="contact-mail" href="mailto:janvictorninogrundl@gmail.com">janvictorninogrundl@gmail.com</a>
+    <div class="contact-split">
+      <div>
+        <p class="prose" style="margin-bottom:2rem" data-i18n="contact.desc">If you want to get in touch, just write me. A project, a research idea, a job, or an argument about fantasy books are all welcome. I am based in Rostock and happy to work remotely.</p>
+        <a class="contact-mail" href="mailto:janvictorninogrundl@gmail.com">janvictorninogrundl@gmail.com</a>
+      </div>
+      <aside class="contact-side">
+        <div class="stack">
+          <b data-i18n="contact.whereLabel">Based in</b>
+          <span data-i18n="contact.where">Rostock, Germany &mdash; open to remote work.</span>
+        </div>
+        <div class="stack">
+          <b data-i18n="contact.elsewhereLabel">Elsewhere</b>
+          <span>
+            <a href="https://github.com/jg512" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
+            <a href="https://www.linkedin.com/in/jan-victornino-grundl-722645357/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot;
+            <a href="assets/cv/Jan_Grundl_CV.pdf" download data-i18n="contact.cv">CV (PDF)</a>
+          </span>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
 <footer>
+  <div class="wrap">
+    <details class="credits">
+      <summary data-i18n="credits.title">Photo credits</summary>
+      <ul>
+        <li><b>fablr</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Library_stacks_of_books_and_bookshelf.jpg" target="_blank" rel="noopener noreferrer">Shixart1985</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>, via Wikimedia Commons</li>
+        <li><b>Nordwasser telematics</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Geisenheim_-_Wasserwerk.jpg" target="_blank" rel="noopener noreferrer">Oliver Abels (SBT)</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons</li>
+        <li><b>Vitals from video</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Vital_signs_monitor_display.jpg" target="_blank" rel="noopener noreferrer">James Stenberg</a>, Public domain, via Wikimedia Commons</li>
+        <li><b>Aline AI Core</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg" target="_blank" rel="noopener noreferrer">Markus Spiske</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a>, via Wikimedia Commons</li>
+        <li><b>Calf health sensing</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Calf_in_a_barn_2019_G1.jpg" target="_blank" rel="noopener noreferrer">George Chernilevsky</a>, Public domain, via Wikimedia Commons</li>
+        <li><b>OMNeT++ simulation</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:19-inch_rackmount_Ethernet_switches_and_patch_panels.jpg" target="_blank" rel="noopener noreferrer">Dsimic</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons</li>
+        <li><b>ArbiterMed-MCP</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:2023_Stetoskop.jpg" target="_blank" rel="noopener noreferrer">Jacek Halicki</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons</li>
+        <li><b>nano-gpt2</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Artificial_Neural_Network_with_Chip.jpg" target="_blank" rel="noopener noreferrer">mikemacmarketing</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>, via Wikimedia Commons</li>
+        <li><b>ESP32 encrypted chat</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:ESP32_Espressif_ESP-WROOM-32_Dev_Board.jpg" target="_blank" rel="noopener noreferrer">Ubahnverleih</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a>, via Wikimedia Commons</li>
+        <li><b>FRITZ!Box 7490</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:FRITZ!Box_7490_-_board-4152.jpg" target="_blank" rel="noopener noreferrer">Raimond Spekking</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons</li>
+        <li><b>rfidpoll</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:RFID_125_kHz_Glass_Tag_1.jpg" target="_blank" rel="noopener noreferrer">Flollie</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons</li>
+        <li><b>NALA-AI</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Warnow_in_Ruehn_01.jpg" target="_blank" rel="noopener noreferrer">Unukorno</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, via Wikimedia Commons</li>
+        <li><b>BYTE Challenge</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:BBC_micro_bit_(25074666452).jpg" target="_blank" rel="noopener noreferrer">Les Pounder</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>, via Wikimedia Commons</li>
+        <li><b>Student council</b> &mdash; <a href="https://commons.wikimedia.org/wiki/File:Rostock,_Universit%C3%A4t,_Hauptgeb%C3%A4ude_--_2024_--_5310.jpg" target="_blank" rel="noopener noreferrer">Dietmar Rabich</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons</li>
+      </ul>
+    </details>
+  </div>
   <div class="wrap footer-inner">
     <span data-i18n="footer.text">&copy; 2026 Jan Victornino Grundl, Rostock</span>
     <span class="footer-links">
@@ -1299,9 +1401,8 @@
       "proj.fritz.desc": "Reverse engineering my own router. Slipping a temporary OpenWRT image in through the FTP boot window to read out stored passwords and credentials and rewrite them, with Claude Code helping as a static analyser on the firmware.",
       "proj.fritz.note": "Personal hardware, write-up on request",
       "proj.omnet.title": "OMNeT++ network simulation",
-      "proj.omnet.meta": "University, 2025",
-      "proj.omnet.desc": "A discrete-event network simulation built in OMNeT++, modelling how a protocol behaves under load and measuring throughput and latency instead of guessing at them.",
-      "proj.omnet.note": "Coursework project",
+      "proj.omnet.meta": "Network modelling, 2025",
+      "proj.omnet.desc": "Discrete-event simulation of a protocol under load in OMNeT++, measuring throughput and latency instead of guessing at them &mdash; the same modelling a sensor network needs before it is trusted to scale. Built as a university project.",
       "proj.rfid.meta": "Open source",
       "proj.rfid.desc": "A small open-source tool for polling and reading RFID tags from a reader, made to be simple to script against rather than a heavy framework.",
       "cv.label": "Curriculum vitae",
@@ -1359,9 +1460,9 @@
       "vol.stura.title": "Student council",
       "vol.stura.meta": "University politics",
       "vol.stura.desc": "Elected member of the student council (StuRa) at the University of Rostock, and a member of the Gesellschaft f&uuml;r Informatik.",
-      "vol.nordwasser.title": "Nordwasser telematics",
-      "vol.nordwasser.meta": "Student consulting",
-      "vol.nordwasser.desc": "A student transfer project with Nordwasser GmbH: a vendor-independent telematics concept for 138 vehicles over OBD dongles, delivered as a 40-page specification with a cost-benefit calculation and rollout plan.",
+      "proj.nordwasser.title": "Nordwasser telematics",
+      "proj.nordwasser.meta": "Student consulting",
+      "proj.nordwasser.desc": "A student transfer project with Nordwasser GmbH: a vendor-independent telematics concept for 138 vehicles over OBD dongles, delivered as a 40-page specification with a cost-benefit calculation and rollout plan.",
       "beyond.label": "Off screen",
       "beyond.title": "Beyond code",
       "beyond.intro": "Conferences, long books, and dwarf colonies that end badly. I train to clear my head and read to fill it again.",
@@ -1381,6 +1482,11 @@
       "books.monarchies.desc": "Paul Kearney&rsquo;s gunpowder fantasy about war, religion and discovery.",
       "contact.label": "Contact",
       "contact.title": "Get in touch",
+      "contact.whereLabel": "Based in",
+      "contact.where": "Rostock, Germany &mdash; open to remote work.",
+      "contact.elsewhereLabel": "Elsewhere",
+      "contact.cv": "CV (PDF)",
+      "credits.title": "Photo credits",
       "contact.desc": "If you want to get in touch, just write me. A project, a research idea, a job, or an argument about fantasy books are all welcome. I am based in Rostock and happy to work remotely.",
       "footer.text": "&copy; 2026 Jan Victornino Grundl, Rostock"
     },
@@ -1437,9 +1543,8 @@
       "proj.fritz.desc": "Reverse Engineering am eigenen Router. &Uuml;ber das FTP-Bootfenster ein tempor&auml;res OpenWRT-Image eingeschleust, um gespeicherte Passw&ouml;rter und Zugangsdaten auszulesen und neu zu setzen. Claude Code half dabei als statischer Analyzer f&uuml;r die Firmware.",
       "proj.fritz.note": "Private Hardware, Bericht auf Anfrage",
       "proj.omnet.title": "OMNeT++ Netzwerksimulation",
-      "proj.omnet.meta": "Uni, 2025",
-      "proj.omnet.desc": "Eine ereignisdiskrete Netzwerksimulation in OMNeT++, die das Verhalten eines Protokolls unter Last modelliert und Durchsatz und Latenz misst, statt sie zu sch&auml;tzen.",
-      "proj.omnet.note": "Studienprojekt",
+      "proj.omnet.meta": "Netzmodellierung, 2025",
+      "proj.omnet.desc": "Ereignisdiskrete Simulation eines Protokolls unter Last in OMNeT++, die Durchsatz und Latenz misst, statt sie zu sch&auml;tzen &mdash; genau die Modellierung, die ein Sensornetz braucht, bevor man ihm im gro&szlig;en Ma&szlig;stab traut. Entstanden als Studienprojekt.",
       "proj.rfid.meta": "Open Source",
       "proj.rfid.desc": "Ein kleines Open-Source-Tool zum Auslesen von RFID-Tags &uuml;ber einen Reader. Bewusst so angelegt, dass man es einfach skripten kann, statt als schweres Framework.",
       "cv.label": "Lebenslauf",
@@ -1497,9 +1602,9 @@
       "vol.stura.title": "Studierendenrat",
       "vol.stura.meta": "Hochschulpolitik",
       "vol.stura.desc": "Gew&auml;hltes Mitglied im Studierendenrat (StuRa) der Universit&auml;t Rostock und Mitglied der Gesellschaft f&uuml;r Informatik.",
-      "vol.nordwasser.title": "Nordwasser Telematik",
-      "vol.nordwasser.meta": "Studentische Beratung",
-      "vol.nordwasser.desc": "Ein studentisches Transferprojekt mit der Nordwasser GmbH: ein herstellerunabh&auml;ngiges Telematik-Konzept f&uuml;r 138 Fahrzeuge &uuml;ber OBD-Dongles, abgegeben als 40-seitiges Pflichtenheft mit Wirtschaftlichkeitsrechnung und Umsetzungsplan.",
+      "proj.nordwasser.title": "Nordwasser Telematik",
+      "proj.nordwasser.meta": "Studentische Beratung",
+      "proj.nordwasser.desc": "Ein studentisches Transferprojekt mit der Nordwasser GmbH: ein herstellerunabh&auml;ngiges Telematik-Konzept f&uuml;r 138 Fahrzeuge &uuml;ber OBD-Dongles, abgegeben als 40-seitiges Pflichtenheft mit Wirtschaftlichkeitsrechnung und Umsetzungsplan.",
       "beyond.label": "Abseits vom Bildschirm",
       "beyond.title": "Neben dem Code",
       "beyond.intro": "Konferenzen, lange B&uuml;cher und Zwergenkolonien, die b&ouml;se enden. Ich trainiere, um den Kopf frei zu bekommen, und lese, um ihn wieder zu f&uuml;llen.",
@@ -1519,6 +1624,11 @@
       "books.monarchies.desc": "Paul Kearneys Gunpowder-Fantasy &uuml;ber Krieg, Religion und Entdeckung.",
       "contact.label": "Kontakt",
       "contact.title": "Melden Sie sich",
+      "contact.whereLabel": "Ans&auml;ssig in",
+      "contact.where": "Rostock, Deutschland &mdash; offen f&uuml;r Remote-Arbeit.",
+      "contact.elsewhereLabel": "Anderswo",
+      "contact.cv": "Lebenslauf (PDF)",
+      "credits.title": "Bildnachweise",
       "contact.desc": "Wenn Sie Kontakt aufnehmen m&ouml;chten, schreiben Sie mir einfach. Ob Projekt, Forschungsidee, Job oder eine Diskussion &uuml;ber Fantasy-B&uuml;cher. Ich sitze in Rostock und arbeite gern remote.",
       "footer.text": "&copy; 2026 Jan Victornino Grundl, Rostock"
     }
