@@ -42,7 +42,7 @@ SUMMARY = (
 EXPERIENCE = [
     dict(
         org="Yachthafenresidenz Hohe Düne", url="https://www.hohe-duene.de/",
-        role="Working Student, Digitalisation & Full-Stack Development",
+        role="Student Software Developer, Digitalisation & Full-Stack Development",
         when="Jul 2026 - Present", where="Rostock, Germany",
         bullets=[
             "Responsible for planning and integrating the ERP and marina management system for a "
@@ -79,7 +79,7 @@ EXPERIENCE = [
     ),
     dict(
         org="Ossinity GmbH", url="https://de.linkedin.com/company/ossinity",
-        role="Working Student, AI", when="Jan 2026 - Apr 2026", where="Rostock, Germany",
+        role="Student AI Developer", when="Jan 2026 - Apr 2026", where="Rostock, Germany",
         bullets=[
             "Annotated MRI scans in 3D Slicer for AI-assisted cancer detection, and ran evaluation and "
             "testing in Python.",
