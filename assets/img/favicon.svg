@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="24" fill="#1a3828" />
-  <text x="50%" y="54%" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="52" fill="#c8a96e" text-anchor="middle" dominant-baseline="middle" letter-spacing="-2">JG</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <text x="32" y="33" text-anchor="middle" dominant-baseline="central"
+        font-family="Inter, 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif"
+        font-size="34" font-weight="700" letter-spacing="-1.5" fill="#000000">JG</text>
 </svg>

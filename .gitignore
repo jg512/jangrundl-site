@@ -9,3 +9,7 @@ __pycache__/
 *.pyc
 .env
 instagram/
+
+# claude code session artifacts
+2???-??-??-??????-*.txt
+.claude/RESUME.md
