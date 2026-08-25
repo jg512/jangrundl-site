@@ -106,7 +106,7 @@ EXPERIENCE = [
 
 PROJECTS = [
     dict(
-        org="Summer of Solutions · The Future Living", url="https://www.thefutureliving.com/summer-of-solutions-en/",
+        org="Summer of Solutions · The Future Living and Fraunhofer IGP", url="https://www.thefutureliving.com/summer-of-solutions-en/",
         role="Practice-transfer project with Nordwasser GmbH", when="Apr 2026 - Jul 2026",
         bullets=[
             "Responsible for technical concept, architecture and data protection in a team of five "
