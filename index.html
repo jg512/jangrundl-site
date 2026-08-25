@@ -41,7 +41,7 @@
       --border-strong: #d4cec0;
       --ink: #191917;
       --ink-soft: #3a3a36;
-      --muted: #77746b;
+      --muted: #6b6860;
       --accent: #2d5a3d;
       --accent-ink: #ffffff;
       --accent-soft: rgba(45, 90, 61, 0.08);
@@ -353,6 +353,8 @@
       filter: var(--logo-filter);
       transition: filter 0.25s ease, transform 0.25s ease;
     }
+    /* square-ish marks need more height than wordmarks to carry the same weight */
+    .logo-link.is-mark img { height: 3.5rem; }
     .logo-link:hover img { filter: var(--logo-filter-hover); transform: translateY(-1px); }
     .logo-text {
       font-family: 'Inter', sans-serif;
@@ -372,7 +374,7 @@
       max-width: 62ch;
     }
     .partners + .partners { margin-top: 0.7rem; }
-    .partners a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+    .partners a { white-space: nowrap; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
     .partners a:hover { color: var(--ink); border-bottom-color: var(--border-strong); }
     .partners .sep { padding: 0 0.45rem; opacity: 0.55; }
     .partners .partners-kind { color: var(--muted); font-weight: 500; }
@@ -477,6 +479,7 @@
       .cv-entry { grid-template-columns: 1fr; gap: 0.35rem; padding: 1.25rem 0; }
       .logos { gap: 1.4rem 2rem; }
       .logo-link img { height: 1.6rem; }
+      .logo-link.is-mark img { height: 2.05rem; }
       .consortium { margin-top: 2.2rem; padding-top: 1.6rem; }
       .partners { font-size: 0.8rem; line-height: 1.85; }
       .partners .sep { padding: 0 0.3rem; }
@@ -586,7 +589,7 @@
       <a class="logo-link" href="https://www.igd.fraunhofer.de/" target="_blank" rel="noopener noreferrer" title="Fraunhofer IGD">
         <img src="assets/img/logos/igd.svg" alt="Fraunhofer IGD" />
       </a>
-      <a class="logo-link" href="https://ki-tierwohl.de/" target="_blank" rel="noopener noreferrer" title="KI-Tierwohl">
+      <a class="logo-link is-mark" href="https://ki-tierwohl.de/" target="_blank" rel="noopener noreferrer" title="KI-Tierwohl">
         <img src="assets/img/logos/ki-tierwohl.png" alt="KI-Tierwohl" />
       </a>
       <a class="logo-link" href="https://www.uni-rostock.de/" target="_blank" rel="noopener noreferrer" title="Universität Rostock">
@@ -598,10 +601,10 @@
       <a class="logo-link" href="https://www.fbn-dummerstorf.de/" target="_blank" rel="noopener noreferrer" title="Forschungsinstitut für Nutztierbiologie">
         <img src="assets/img/logos/fbn.svg" alt="FBN Dummerstorf" />
       </a>
-      <a class="logo-link" href="https://www.hohe-duene.de/" target="_blank" rel="noopener noreferrer" title="Yachthafenresidenz Hohe Düne">
+      <a class="logo-link is-mark" href="https://www.hohe-duene.de/" target="_blank" rel="noopener noreferrer" title="Yachthafenresidenz Hohe Düne">
         <img src="assets/img/logos/hohe-duene.png" alt="Yachthafenresidenz Hohe Düne" />
       </a>
-      <a class="logo-link" href="https://de.linkedin.com/company/ossinity" target="_blank" rel="noopener noreferrer" title="Ossinity GmbH">
+      <a class="logo-link is-mark" href="https://de.linkedin.com/company/ossinity" target="_blank" rel="noopener noreferrer" title="Ossinity GmbH">
         <img src="assets/img/logos/ossinity.png" alt="Ossinity GmbH" />
       </a>
       <a class="logo-link" href="https://byte-challenge.de/" target="_blank" rel="noopener noreferrer" title="BYTE Challenge">
@@ -610,7 +613,7 @@
       <a class="logo-link" href="https://gi.de/" target="_blank" rel="noopener noreferrer" title="Gesellschaft für Informatik">
         <img src="assets/img/logos/gi.png" alt="Gesellschaft für Informatik" />
       </a>
-      <a class="logo-link" href="https://www.nala-ai.org/" target="_blank" rel="noopener noreferrer" title="NALA-AI">
+      <a class="logo-link is-mark" href="https://www.nala-ai.org/" target="_blank" rel="noopener noreferrer" title="NALA-AI">
         <img src="assets/img/logos/nala.png" alt="NALA-AI" />
       </a>
       <a class="logo-link" href="https://www.nordwasser.de/" target="_blank" rel="noopener noreferrer" title="Nordwasser GmbH">
