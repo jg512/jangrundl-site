@@ -355,6 +355,7 @@
     }
     /* square-ish marks need more height than wordmarks to carry the same weight */
     .logo-link.is-mark img { height: 3.5rem; }
+    .logo-link.is-wide img { max-width: 17rem; }
     .logo-link:hover img { filter: var(--logo-filter-hover); transform: translateY(-1px); }
     .logo-text {
       font-family: 'Inter', sans-serif;
@@ -628,6 +629,24 @@
     </div>
 
     <div class="consortium">
+      <span class="section-label" data-i18n="orgs.hackathons">Hackathon cases I have worked on</span>
+      <div class="logos" style="gap:2rem 3rem">
+        <a class="logo-link is-wide" href="https://www.f-i.de/" target="_blank" rel="noopener noreferrer" title="Finanz Informatik">
+          <img src="assets/img/logos/finanz-informatik.svg" alt="Finanz Informatik" />
+        </a>
+        <a class="logo-link" href="https://caire.ai/" target="_blank" rel="noopener noreferrer" title="caire">
+          <img src="assets/img/logos/caire.svg" alt="caire" />
+        </a>
+        <a class="logo-link" href="https://about.google/" target="_blank" rel="noopener noreferrer" title="Google">
+          <img src="assets/img/logos/google.png" alt="Google" />
+        </a>
+        <a class="logo-link is-mark" href="https://www.pwc.de/" target="_blank" rel="noopener noreferrer" title="PwC">
+          <img src="assets/img/logos/pwc.png" alt="PwC" />
+        </a>
+      </div>
+    </div>
+
+    <div class="consortium">
       <span class="section-label" data-i18n="orgs.consortium">KI-Tierwohl research consortium</span>
       <p class="partners">
         <a href="https://experimentelle-chirurgie.med.uni-rostock.de/" target="_blank" rel="noopener noreferrer">Universit&auml;tsmedizin Rostock (IEC)</a>
@@ -668,6 +687,10 @@
       <p data-i18n="about.p2">I write Python and PyTorch for the machine learning side, Django and PostgreSQL for backends, and C or C++ when the target is an ESP32 or a Raspberry Pi. The part I like most is the seam between them: turning a noisy sensor reading into something a system can actually act on.</p>
       <p data-i18n="about.p3">I have also taught on and off since 2023, running tutorials for prospective students in the university&rsquo;s Junior Study programme and volunteering for STEM courses at BYTE Challenge.</p>
       <div class="stack">
+        <b data-i18n="about.langLabel">Languages</b>
+        <span data-i18n="about.lang">German (native), English (C1), Spanish (basic).</span>
+      </div>
+      <div class="stack">
         <b data-i18n="about.stackLabel">Usually working with</b>
         <span data-i18n="about.stack">Python, PyTorch, OpenCV, TypeScript, C and C++, Django, PostgreSQL, ESP32 and Raspberry Pi, Docker, Git.</span>
       </div>
@@ -692,10 +715,19 @@
 
       <article class="card">
         <div class="card-head">
+          <h3 data-i18n="proj.care.title">Vitals from video</h3>
+          <span class="card-meta" data-i18n="proj.care.meta">Hackathon, Jul 2026</span>
+        </div>
+        <p data-i18n="proj.care.desc">Healthcare Hackathon Berlin, on a case with caire: estimating vital parameters from video with remote PPG, plus LLM-based evaluation and alerting tied into the patient history.</p>
+        <div class="card-foot"><a class="card-link" href="https://caire.ai/" target="_blank" rel="noopener noreferrer">caire.ai</a></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
           <h3>Aline AI Core</h3>
           <span class="card-meta" data-i18n="proj.aline.meta">Hackathon, Apr 2026</span>
         </div>
-        <p data-i18n="proj.aline.desc">Third place at the Finanz Informatik hackathon. An agent that reads a business requirement, splits it into developer tasks, and opens the pull requests for them.</p>
+        <p data-i18n="proj.aline.desc">Top 3 of over 300 participants on a Finanz Informatik case. An agent that reads a business requirement, splits it into developer tasks, and opens the pull requests for them.</p>
         <div class="card-foot"><a class="card-link" href="https://github.com/jg512/Hackathon-FLS-2026" target="_blank" rel="noopener noreferrer" data-i18n="proj.github">View on GitHub</a></div>
       </article>
 
@@ -782,6 +814,7 @@
         <ul class="cv-desc">
           <li data-i18n="cv.e1.b1">Built an IoT sensor system on Arduino and Raspberry Pi for the early detection of respiratory illness in calves.</li>
           <li data-i18n="cv.e1.b2">Developed the ML pipelines in PyTorch and OpenCV, annotated the data in CVAT, and ran the evaluations on site.</li>
+          <li data-i18n="cv.e1.b3">Work package AP 6 of KI-TIERWOHL, a &euro;5 million excellence-research consortium funded from the ERDF programme of Mecklenburg-Vorpommern.</li>
         </ul>
       </div>
     </div>
@@ -799,19 +832,20 @@
     </div>
 
     <div class="cv-entry">
-      <div class="cv-when" data-i18n="cv.e3.when">Aug 2026</div>
+      <div class="cv-when" data-i18n="cv.e3.when">Jul 2026 to now</div>
       <div>
-        <h4 class="cv-title" data-i18n="cv.e3.role">Student Software Developer</h4>
+        <h4 class="cv-title" data-i18n="cv.e3.role">Working Student, Digitalisation &amp; Full-Stack Development</h4>
         <div class="cv-org"><a href="https://www.hohe-duene.de/" target="_blank" rel="noopener noreferrer">Yachthafenresidenz Hohe D&uuml;ne</a></div>
         <ul class="cv-desc">
-          <li data-i18n="cv.e3.b1">Audited legacy Java systems for code quality and security issues and documented the findings.</li>
+          <li data-i18n="cv.e3.b1">Responsible for planning and integrating the ERP and marina management system for a 920-berth marina, the first yacht harbour in Germany to hold a five-star classification.</li>
+          <li data-i18n="cv.e3.b3">Audited the legacy Java systems for code quality and security issues and documented the findings.</li>
           <li data-i18n="cv.e3.b2">Drafted a migration path towards a Django and PostgreSQL data model.</li>
         </ul>
       </div>
     </div>
 
     <div class="cv-entry">
-      <div class="cv-when" data-i18n="cv.e4.when">Nov 2025 to May 2026</div>
+      <div class="cv-when" data-i18n="cv.e4.when">Jan 2026 to Apr 2026</div>
       <div>
         <h4 class="cv-title" data-i18n="cv.e4.role">Student AI Developer</h4>
         <div class="cv-org"><a href="https://de.linkedin.com/company/ossinity" target="_blank" rel="noopener noreferrer">Ossinity GmbH</a></div>
@@ -864,7 +898,7 @@
         <h4 class="cv-title" data-i18n="cv.ed1.role">M.Sc. Computer Science</h4>
         <div class="cv-org"><a href="https://www.uni-rostock.de/" target="_blank" rel="noopener noreferrer" data-i18n="cv.uniRostock">University of Rostock</a></div>
         <ul class="cv-desc">
-          <li data-i18n="cv.ed1.b1">Focus on AI, software engineering and IoT. Current average 1.7 on the German scale; expected to finish in Oct 2027.</li>
+          <li data-i18n="cv.ed1.b1">Focus on AI, software engineering and IoT. Current average 1.7 on the German scale; expected to finish in Apr 2027.</li>
         </ul>
       </div>
     </div>
@@ -917,10 +951,19 @@
 
       <article class="card">
         <div class="card-head">
+          <h3 data-i18n="vol.stura.title">Student council</h3>
+          <span class="card-meta" data-i18n="vol.stura.meta">University politics</span>
+        </div>
+        <p data-i18n="vol.stura.desc">Elected member of the student council (StuRa) at the University of Rostock, and a member of the Gesellschaft f&uuml;r Informatik.</p>
+        <div class="card-foot"><a class="card-link" href="https://www.asta-rostock.de/mitmachen/stura/" target="_blank" rel="noopener noreferrer">asta-rostock.de</a></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
           <h3 data-i18n="vol.nordwasser.title">Nordwasser telematics</h3>
           <span class="card-meta" data-i18n="vol.nordwasser.meta">Student consulting</span>
         </div>
-        <p data-i18n="vol.nordwasser.desc">A student transfer project where we designed a telematics architecture for a fleet of roughly 200 vehicles.</p>
+        <p data-i18n="vol.nordwasser.desc">A student transfer project with Nordwasser GmbH: a vendor-independent telematics concept for 138 vehicles over OBD dongles, delivered as a 40-page specification with a cost-benefit calculation and rollout plan.</p>
         <div class="card-foot"><a class="card-link" href="https://www.nordwasser.de/" target="_blank" rel="noopener noreferrer">nordwasser.de</a></div>
       </article>
     </div>
@@ -1218,6 +1261,7 @@
       "hero.p2": "AI, IoT or plain software engineering: the label matters less to me than the problem. I just like solving them, preferably ones that have to survive outside a demo, whether that is in a barn, on a microcontroller, or inside somebody else&rsquo;s legacy codebase.",
       "hero.cv": "CV",
       "orgs.title": "Places I have worked with",
+      "orgs.hackathons": "Hackathon cases I have worked on",
       "orgs.consortium": "KI-Tierwohl research consortium",
       "orgs.associated": "Associated partners:",
       "about.label": "About",
@@ -1225,6 +1269,8 @@
       "about.p1": "I finished my B.Sc. in computer science at the University of Rostock in 2025 and stayed on for the master&rsquo;s, with a focus on AI and software engineering. The bachelor took me longer than the standard seven semesters, because I was working alongside it to help support my family.",
       "about.p2": "I write Python and PyTorch for the machine learning side, Django and PostgreSQL for backends, and C or C++ when the target is an ESP32 or a Raspberry Pi. The part I like most is the seam between them: turning a noisy sensor reading into something a system can actually act on.",
       "about.p3": "I have also taught on and off since 2023, running tutorials for prospective students in the university&rsquo;s Junior Study programme and volunteering for STEM courses at BYTE Challenge.",
+      "about.langLabel": "Languages",
+      "about.lang": "German (native), English (C1), Spanish (basic).",
       "about.stackLabel": "Usually working with",
       "about.stack": "Python, PyTorch, OpenCV, TypeScript, C and C++, Django, PostgreSQL, ESP32 and Raspberry Pi, Docker, Git.",
       "projects.label": "Work",
@@ -1232,8 +1278,11 @@
       "proj.github": "View on GitHub",
       "proj.fablr.meta": "Mobile app, 2026",
       "proj.fablr.desc": "A book app for people who spend more time picking a book than reading one. React Native and Supabase, matching on what a story actually does instead of on its cover.",
+      "proj.care.title": "Vitals from video",
+      "proj.care.meta": "Hackathon, Jul 2026",
+      "proj.care.desc": "Healthcare Hackathon Berlin, on a case with caire: estimating vital parameters from video with remote PPG, plus LLM-based evaluation and alerting tied into the patient history.",
       "proj.aline.meta": "Hackathon, Apr 2026",
-      "proj.aline.desc": "Third place at the Finanz Informatik hackathon. An agent that reads a business requirement, splits it into developer tasks, and opens the pull requests for them.",
+      "proj.aline.desc": "Top 3 of over 300 participants on a Finanz Informatik case. An agent that reads a business requirement, splits it into developer tasks, and opens the pull requests for them.",
       "proj.iot.title": "Calf health sensing",
       "proj.iot.meta": "Research, ongoing",
       "proj.iot.desc": "A smart jacket for calves, built from Arduino and Raspberry Pi hardware, that watches for early signs of respiratory illness, with a PyTorch and OpenCV pipeline behind it. Annotated in CVAT, tested in a real barn.",
@@ -1265,16 +1314,18 @@
       "cv.e1.role": "Student Research Assistant",
       "cv.e1.b1": "Built an IoT sensor system on Arduino and Raspberry Pi for the early detection of respiratory illness in calves.",
       "cv.e1.b2": "Developed the ML pipelines in PyTorch and OpenCV, annotated the data in CVAT, and ran the evaluations on site.",
+      "cv.e1.b3": "Work package AP 6 of KI-TIERWOHL, a &euro;5 million excellence-research consortium funded from the ERDF programme of Mecklenburg-Vorpommern.",
       "cv.e2.when": "Dec 2025 to now",
       "cv.e2.role": "Student Research Assistant",
       "cv.e2.org": "Chair of Software Engineering, University of Rostock",
       "cv.e2.b1": "Designed a semi-autonomous LLM agent using ReAct prompting, tool use and MCP that generates and checks UML class diagrams.",
       "cv.e2.b2": "Built the dataset and implemented the system in Python with the Hugging Face stack.",
-      "cv.e3.when": "Aug 2026",
-      "cv.e3.role": "Student Software Developer",
-      "cv.e3.b1": "Audited legacy Java systems for code quality and security issues and documented the findings.",
+      "cv.e3.when": "Jul 2026 to now",
+      "cv.e3.role": "Working Student, Digitalisation &amp; Full-Stack Development",
+      "cv.e3.b1": "Responsible for planning and integrating the ERP and marina management system for a 920-berth marina, the first yacht harbour in Germany to hold a five-star classification.",
+      "cv.e3.b3": "Audited the legacy Java systems for code quality and security issues and documented the findings.",
       "cv.e3.b2": "Drafted a migration path towards a Django and PostgreSQL data model.",
-      "cv.e4.when": "Nov 2025 to May 2026",
+      "cv.e4.when": "Jan 2026 to Apr 2026",
       "cv.e4.role": "Student AI Developer",
       "cv.e4.b1": "Annotated MRI scans in 3D Slicer for AI-assisted breast cancer detection.",
       "cv.e4.b2": "Ran the quality assurance side: testing, bug fixing and model validation.",
@@ -1292,7 +1343,7 @@
       "cv.e7.b1": "Where I learned to show up early, deal with all kinds of people, and keep things running on a busy morning.",
       "cv.ed1.when": "Since Oct 2025",
       "cv.ed1.role": "M.Sc. Computer Science",
-      "cv.ed1.b1": "Focus on AI, software engineering and IoT. Current average 1.7 on the German scale; expected to finish in Oct 2027.",
+      "cv.ed1.b1": "Focus on AI, software engineering and IoT. Current average 1.7 on the German scale; expected to finish in Apr 2027.",
       "cv.ed2.when": "Oct 2020 to Oct 2025",
       "cv.ed2.role": "B.Sc. Computer Science",
       "cv.ed2.b1": "Final grade 2.4, thesis 1.3 on the German scale.",
@@ -1305,9 +1356,12 @@
       "vol.nala.desc": "An open platform that turns cheap sensors into live maps of German rivers. I contribute code; the project was shown at re:publica 2026.",
       "vol.byte.meta": "Teaching",
       "vol.byte.desc": "Free online STEM courses for school students who might otherwise never see a line of code. Run by volunteers under the Gesellschaft f&uuml;r Informatik.",
+      "vol.stura.title": "Student council",
+      "vol.stura.meta": "University politics",
+      "vol.stura.desc": "Elected member of the student council (StuRa) at the University of Rostock, and a member of the Gesellschaft f&uuml;r Informatik.",
       "vol.nordwasser.title": "Nordwasser telematics",
       "vol.nordwasser.meta": "Student consulting",
-      "vol.nordwasser.desc": "A student transfer project where we designed a telematics architecture for a fleet of roughly 200 vehicles.",
+      "vol.nordwasser.desc": "A student transfer project with Nordwasser GmbH: a vendor-independent telematics concept for 138 vehicles over OBD dongles, delivered as a 40-page specification with a cost-benefit calculation and rollout plan.",
       "beyond.label": "Off screen",
       "beyond.title": "Beyond code",
       "beyond.intro": "Conferences, long books, and dwarf colonies that end badly. I train to clear my head and read to fill it again.",
@@ -1345,6 +1399,7 @@
       "hero.p2": "Ob KI, IoT oder klassische Softwaretechnik: Das Etikett ist mir weniger wichtig als die Sache dahinter. Ich l&ouml;se einfach gern Probleme, und am liebsten solche, die auch au&szlig;erhalb einer Demo bestehen m&uuml;ssen, ob im Stall, auf einem Mikrocontroller oder in fremdem Altcode.",
       "hero.cv": "Lebenslauf",
       "orgs.title": "Orte, an denen ich gearbeitet habe",
+      "orgs.hackathons": "Hackathon-Cases, an denen ich gearbeitet habe",
       "orgs.consortium": "Verbundpartner im Projekt KI-Tierwohl",
       "orgs.associated": "Assoziierte Partner:",
       "about.label": "&Uuml;ber mich",
@@ -1352,6 +1407,8 @@
       "about.p1": "Ich habe meinen B.Sc. Informatik 2025 an der Universit&auml;t Rostock abgeschlossen und direkt den Master angeh&auml;ngt, mit Schwerpunkt KI und Softwaretechnik. Der Bachelor hat l&auml;nger gedauert als die Regelstudienzeit von sieben Semestern, weil ich nebenher gearbeitet habe, um meine Familie zu unterst&uuml;tzen.",
       "about.p2": "Ich schreibe Python und PyTorch f&uuml;r den Machine-Learning-Teil, Django und PostgreSQL f&uuml;r Backends und C oder C++, wenn das Ziel ein ESP32 oder ein Raspberry Pi ist. Am liebsten arbeite ich an der Schnittstelle dazwischen: einen verrauschten Sensorwert in etwas verwandeln, mit dem ein System wirklich arbeiten kann.",
       "about.p3": "Seit 2023 unterrichte ich immer wieder: Tutorien f&uuml;r Studieninteressierte im Juniorstudium der Universit&auml;t Rostock und ehrenamtliche MINT-Kurse bei der BYTE Challenge.",
+      "about.langLabel": "Sprachen",
+      "about.lang": "Deutsch (Muttersprache), Englisch (C1), Spanisch (Grundkenntnisse).",
       "about.stackLabel": "Womit ich meistens arbeite",
       "about.stack": "Python, PyTorch, OpenCV, TypeScript, C und C++, Django, PostgreSQL, ESP32 und Raspberry Pi, Docker, Git.",
       "projects.label": "Arbeit",
@@ -1359,8 +1416,11 @@
       "proj.github": "Auf GitHub ansehen",
       "proj.fablr.meta": "Mobile App, 2026",
       "proj.fablr.desc": "Eine Buch-App f&uuml;r alle, die l&auml;nger nach einem Buch suchen, als sie am Ende darin lesen. Gebaut mit React Native und Supabase. Sie sucht danach aus, was eine Geschichte tats&auml;chlich erz&auml;hlt, und nicht danach, wie ihr Cover aussieht.",
+      "proj.care.title": "Vitalwerte aus Video",
+      "proj.care.meta": "Hackathon, Jul 2026",
+      "proj.care.desc": "Healthcare Hackathon Berlin, Case gemeinsam mit caire: Vitalparameter aus Videoaufnahmen sch&auml;tzen (Remote-PPG), dazu LLM-gest&uuml;tzte Auswertung und Alarmierung, angebunden an die Patientenhistorie.",
       "proj.aline.meta": "Hackathon, Apr 2026",
-      "proj.aline.desc": "Dritter Platz beim Finanz-Informatik-Hackathon. Ein Agent, der eine fachliche Anforderung liest, sie in Entwicklertasks zerlegt und die passenden Pull Requests er&ouml;ffnet.",
+      "proj.aline.desc": "Top 3 von &uuml;ber 300 Teilnehmenden bei einem Case der Finanz Informatik. Ein Agent, der eine fachliche Anforderung liest, sie in Entwicklertasks zerlegt und die passenden Pull Requests er&ouml;ffnet.",
       "proj.iot.title": "Sensorik f&uuml;r Kälbergesundheit",
       "proj.iot.meta": "Forschung, laufend",
       "proj.iot.desc": "Eine intelligente Jacke f&uuml;r K&auml;lber aus Arduino- und Raspberry-Pi-Hardware, die auf fr&uuml;he Anzeichen von Atemwegserkrankungen achtet, mit einer PyTorch- und OpenCV-Pipeline dahinter. Annotiert in CVAT, getestet im echten Stall.",
@@ -1392,16 +1452,18 @@
       "cv.e1.role": "Studentische Hilfskraft, Forschung",
       "cv.e1.b1": "Aufbau eines IoT-Sensorsystems auf Arduino und Raspberry Pi zur Fr&uuml;herkennung von Atemwegserkrankungen bei K&auml;lbern.",
       "cv.e1.b2": "Entwicklung der ML-Pipelines in PyTorch und OpenCV, Annotation der Daten in CVAT und Auswertung vor Ort.",
+      "cv.e1.b3": "Arbeitspaket AP 6 von KI-TIERWOHL, einem 5-Millionen-Euro-Exzellenzforschungsverbund aus Mitteln des EFRE-Programms Mecklenburg-Vorpommern.",
       "cv.e2.when": "Dez 2025 bis heute",
       "cv.e2.role": "Studentische Hilfskraft, Forschung",
       "cv.e2.org": "Lehrstuhl f&uuml;r Softwaretechnik, Universit&auml;t Rostock",
       "cv.e2.b1": "Entwurf eines teilautonomen LLM-Agenten mit ReAct-Prompting, Tool-Nutzung und MCP, der UML-Klassendiagramme erzeugt und pr&uuml;ft.",
       "cv.e2.b2": "Aufbau des Datensatzes und Implementierung in Python mit dem Hugging-Face-Stack.",
-      "cv.e3.when": "Aug 2026",
-      "cv.e3.role": "Studentischer Softwareentwickler",
-      "cv.e3.b1": "Pr&uuml;fung der Java-Altsysteme auf Codequalit&auml;t und Sicherheitsl&uuml;cken samt Dokumentation der Befunde.",
+      "cv.e3.when": "Jul 2026 bis heute",
+      "cv.e3.role": "Werkstudent Digitalisierung &amp; Full-Stack-Entwicklung",
+      "cv.e3.b1": "Verantwortlich f&uuml;r Planung und Integration von ERP- und Hafenmanagementsystem f&uuml;r einen Hafen mit 920 Liegepl&auml;tzen, den ersten Yachthafen Deutschlands mit F&uuml;nf-Sterne-Klassifizierung.",
+      "cv.e3.b3": "Pr&uuml;fung der Java-Altsysteme auf Codequalit&auml;t und Sicherheitsl&uuml;cken samt Dokumentation der Befunde.",
       "cv.e3.b2": "Entwurf eines Migrationswegs hin zu einem Django- und PostgreSQL-Datenmodell.",
-      "cv.e4.when": "Nov 2025 bis Mai 2026",
+      "cv.e4.when": "Jan 2026 bis Apr 2026",
       "cv.e4.role": "Studentischer KI-Entwickler",
       "cv.e4.b1": "Annotation von MRT-Aufnahmen in 3D Slicer f&uuml;r die KI-gest&uuml;tzte Brustkrebserkennung.",
       "cv.e4.b2": "Verantwortung f&uuml;r die Qualit&auml;tssicherung: Tests, Fehlerbehebung und Modellvalidierung.",
@@ -1419,7 +1481,7 @@
       "cv.e7.b1": "Hier habe ich gelernt, fr&uuml;h aufzustehen, mit allen m&ouml;glichen Menschen klarzukommen und einen hektischen Morgen am Laufen zu halten.",
       "cv.ed1.when": "Seit Okt 2025",
       "cv.ed1.role": "M.Sc. Informatik",
-      "cv.ed1.b1": "Schwerpunkt KI, Softwaretechnik und IoT. Aktueller Durchschnitt 1,7; voraussichtlicher Abschluss Okt 2027.",
+      "cv.ed1.b1": "Schwerpunkt KI, Softwaretechnik und IoT. Aktueller Durchschnitt 1,7; voraussichtlicher Abschluss Apr 2027.",
       "cv.ed2.when": "Okt 2020 bis Okt 2025",
       "cv.ed2.role": "B.Sc. Informatik",
       "cv.ed2.b1": "Abschlussnote 2,4; Abschlussarbeit 1,3.",
@@ -1432,9 +1494,12 @@
       "vol.nala.desc": "Eine offene Plattform, die aus g&uuml;nstigen Sensoren Live-Karten deutscher Fl&uuml;sse macht. Ich steuere Code bei; das Projekt war auf der re:publica 2026 zu sehen.",
       "vol.byte.meta": "Lehre",
       "vol.byte.desc": "Kostenlose Online-MINT-Kurse f&uuml;r Sch&uuml;lerinnen und Sch&uuml;ler, die sonst vielleicht nie eine Zeile Code sehen. Getragen von Ehrenamtlichen der Gesellschaft f&uuml;r Informatik.",
+      "vol.stura.title": "Studierendenrat",
+      "vol.stura.meta": "Hochschulpolitik",
+      "vol.stura.desc": "Gew&auml;hltes Mitglied im Studierendenrat (StuRa) der Universit&auml;t Rostock und Mitglied der Gesellschaft f&uuml;r Informatik.",
       "vol.nordwasser.title": "Nordwasser Telematik",
       "vol.nordwasser.meta": "Studentische Beratung",
-      "vol.nordwasser.desc": "Ein studentisches Transferprojekt, in dem wir eine Telematik-Architektur f&uuml;r eine Flotte von rund 200 Fahrzeugen entworfen haben.",
+      "vol.nordwasser.desc": "Ein studentisches Transferprojekt mit der Nordwasser GmbH: ein herstellerunabh&auml;ngiges Telematik-Konzept f&uuml;r 138 Fahrzeuge &uuml;ber OBD-Dongles, abgegeben als 40-seitiges Pflichtenheft mit Wirtschaftlichkeitsrechnung und Umsetzungsplan.",
       "beyond.label": "Abseits vom Bildschirm",
       "beyond.title": "Neben dem Code",
       "beyond.intro": "Konferenzen, lange B&uuml;cher und Zwergenkolonien, die b&ouml;se enden. Ich trainiere, um den Kopf frei zu bekommen, und lese, um ihn wieder zu f&uuml;llen.",
