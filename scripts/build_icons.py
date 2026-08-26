@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Build the JG mark: the favicon, the touch icon, and the nav logo.
+"""Build the JG mark: the favicon and the touch icon.
 
-One mark, three outputs, all from the same geometry -- a rounded square in the
-page's accent green with the initials in the page's paper cream, set in DM Sans,
-the same face the page uses for its headings.
+Both from the same geometry -- a rounded square in the page's accent green with
+the initials in the page's paper cream, set in DM Sans, the same face the page
+uses for its headings. The mark is deliberately *not* in the page header: the
+nav is the name alone, which is the balance Jan wants there.
 
     pip install pillow fonttools cairosvg && python3 scripts/build_icons.py
 
