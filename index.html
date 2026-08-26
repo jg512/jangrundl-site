@@ -146,6 +146,9 @@
       gap: 1rem;
     }
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
       font-family: 'Inter', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
@@ -154,6 +157,15 @@
       text-decoration: none;
       white-space: nowrap;
     }
+    .nav-mark {
+      width: 1.65rem;
+      height: 1.65rem;
+      flex: none;
+      display: block;
+      border-radius: 0.36rem;
+      transition: transform 0.2s ease;
+    }
+    .nav-logo:hover .nav-mark { transform: translateY(-1px); }
     .nav-right { display: flex; align-items: center; gap: 1.25rem; }
     .nav-links { display: flex; gap: 1.6rem; list-style: none; }
     .nav-links a {
@@ -568,7 +580,7 @@
 <!-- ================= NAV ================= -->
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#top">Jan Victornino Grundl</a>
+    <a class="nav-logo" href="#top"><img class="nav-mark" src="assets/img/favicon.svg" alt="" width="64" height="64" /><span>Jan Victornino Grundl</span></a>
 
     <div class="nav-right">
       <nav>

@@ -9,6 +9,10 @@ python-slugify>=8.0.0    # safe filenames / URLs from titles
 # Instagram carousel tool (scripts/instagram_post.py)
 pillow>=10.0.0           # image rendering
 
-# Open Graph card (scripts/build_og.py)
-# pillow, already required above, plus fpdf2 for scripts/build_cv.py
-fpdf2>=2.7.0            # CV PDF builder
+# CV PDF (scripts/build_cv.py)
+fpdf2>=2.7.0             # PDF builder
+
+# Open Graph card and the JG mark (scripts/build_og.py, scripts/build_icons.py)
+# pillow, already required above, does the rasterising
+fonttools>=4.40.0        # glyph outlines for the favicon, variable-font instancing
+cairosvg>=2.7.0          # renders favicon.svg to icon.png; needs system libcairo2
