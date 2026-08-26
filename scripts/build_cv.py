@@ -34,7 +34,7 @@ CONTACT = [
 
 SUMMARY = (
     "Computer science master's student in Rostock, working as a research assistant on LLM agents "
-    "and on IoT sensor systems for animal health, and as a working student modernising the software "
+    "and on IoT sensor systems for animal health, and as a software developer modernising the software "
     "of a 920-berth marina. Comfortable from microcontroller firmware up to Django backends, and "
     "most interested in systems that have to keep working outside a demo."
 )
@@ -42,11 +42,12 @@ SUMMARY = (
 EXPERIENCE = [
     dict(
         org="Yachthafenresidenz Hohe Düne", url="https://www.hohe-duene.de/",
-        role="Student Software Developer, Digitalisation & Full-Stack Development",
+        role="Software Developer, Digitalisation & Full-Stack Development",
         when="Jul 2026 - Present", where="Rostock, Germany",
         bullets=[
-            "Responsible for planning and integrating the ERP and marina management system for a "
-            "920-berth marina, the first yacht harbour in Germany to hold a five-star classification.",
+            "Architected and developed a new ERP and marina management system to replace the legacy "
+            "platform, modernising operations for a 920-berth marina, the largest in "
+            "Mecklenburg-Vorpommern and the first in Germany to hold a five-star classification.",
             "Modernising the digital infrastructure across hotel and harbour software, databases and web; "
             "reporting directly to the owner.",
             "Audited the legacy Java systems for code quality and security issues and drafted the "
@@ -79,7 +80,7 @@ EXPERIENCE = [
     ),
     dict(
         org="Ossinity GmbH", url="https://de.linkedin.com/company/ossinity",
-        role="Student AI Developer", when="Jan 2026 - Apr 2026", where="Rostock, Germany",
+        role="AI Developer", when="Nov 2025 - Jun 2026", where="Rostock, Germany",
         bullets=[
             "Annotated MRI scans in 3D Slicer for AI-assisted cancer detection, and ran evaluation and "
             "testing in Python.",
@@ -338,6 +339,7 @@ def build():
 #                                                        regierung-mv.de (EXF-25-1031..1038)
 #   920 berths, first 5-star marina in Germany ......... hohe-duene.de/yachthafen,
 #                                                        yachthafen-hohe-duene.de
+#   largest marina in Mecklenburg-Vorpommern ........... Jan's LinkedIn profile, 2026-08-26
 #   138 vehicles, 40+ page specification, team of 5 .... Jan's own CV (cv_jan_grundl.pdf)
 #   13 practice partners, 60+ students ................. thefutureliving.com
 #   Top 3 of 300+ participants ......................... Jan's own CV
