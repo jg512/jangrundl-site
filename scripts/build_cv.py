@@ -73,8 +73,8 @@ EXPERIENCE = [
         url="https://www.informatik.uni-rostock.de/lehrstuehle/am-institut-fuer-informatik-forts/software-engineering/",
         role="Research Assistant", when="Dec 2025 - Present", where="Rostock, Germany",
         bullets=[
-            "Designed a semi-autonomous LLM agent using ReAct prompting, tool use and MCP that generates "
-            "and checks UML class diagrams from source repositories (AI4SE).",
+            "Researched, built and benchmarked custom AI agents for legacy code understanding across "
+            "Python and Java codebases (AI4SE), and developed a Java2PlantUML tool.",
             "Built the evaluation dataset and implemented the system in Python on the Hugging Face stack.",
         ],
     ),
