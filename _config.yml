@@ -11,7 +11,7 @@ description: >-
 #         baseurl: "/repo-name"
 baseurl: ""
 url: "https://www.jangrundl.de"
-image: "/assets/img/og-image.png"
+image: "/assets/img/og-card.png"
 
 # Blog posts live in _posts/ and are reached at /journal/the-file-name/
 permalink: /journal/:title/

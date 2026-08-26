@@ -8,3 +8,7 @@ python-slugify>=8.0.0    # safe filenames / URLs from titles
 
 # Instagram carousel tool (scripts/instagram_post.py)
 pillow>=10.0.0           # image rendering
+
+# Open Graph card (scripts/build_og.py)
+# pillow, already required above, plus fpdf2 for scripts/build_cv.py
+fpdf2>=2.7.0            # CV PDF builder

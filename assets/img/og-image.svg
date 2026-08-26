@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#1a3828"/>
-  <rect x="50" y="50" width="1100" height="530" rx="40" fill="#2d5a3d" stroke="#c8a96e" stroke-width="4"/>
-  <text x="600" y="300" font-family="sans-serif" font-weight="bold" font-size="80" fill="#ffffff" text-anchor="middle">Jan Victornino Grundl</text>
-  <text x="600" y="400" font-family="sans-serif" font-weight="normal" font-size="40" fill="#c8a96e" text-anchor="middle" letter-spacing="2">M.Sc. Computer Science • AI • IoT</text>
-  <text x="600" y="480" font-family="sans-serif" font-weight="lighter" font-size="30" fill="#e8f0eb" text-anchor="middle" opacity="0.8">github.com/jg512  •  Rostock</text>
-</svg>

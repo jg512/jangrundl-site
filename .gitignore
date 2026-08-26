@@ -13,3 +13,6 @@ instagram/
 # claude code session artifacts
 2???-??-??-??????-*.txt
 .claude/RESUME.md
+
+# Google Fonts TTFs pulled down by scripts/build_og.py
+scripts/fonts/
