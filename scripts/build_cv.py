@@ -88,7 +88,7 @@ EXPERIENCE = [
     ),
     dict(
         org="University of Rostock, Chair of Integrated Systems", url=None,
-        role="Student Assistant, Digital Teaching", when="May 2025 - Nov 2025", where="Rostock, Germany",
+        role="Teaching Assistant", when="May 2025 - Nov 2025", where="Rostock, Germany",
         bullets=[
             "Planned, recorded and edited modular teaching videos on computer architecture for reusable "
             "course formats.",
