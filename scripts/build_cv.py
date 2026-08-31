@@ -34,7 +34,7 @@ CONTACT = [
 
 SUMMARY = (
     "Computer science master's student in Rostock, working as a research assistant on LLM agents "
-    "and on IoT sensor systems for animal health, and as a software developer modernising the software "
+    "and on IoT sensor systems for animal health, and as a software engineer modernising the software "
     "of a 920-berth marina. Comfortable from microcontroller firmware up to Django backends, and "
     "most interested in systems that have to keep working outside a demo."
 )
@@ -42,7 +42,7 @@ SUMMARY = (
 EXPERIENCE = [
     dict(
         org="Yachthafenresidenz Hohe Düne", url="https://www.hohe-duene.de/",
-        role="Software Developer, Digitalisation & Full-Stack Development",
+        role="Software Engineer, Digitalisation & Full-Stack Development",
         when="Jul 2026 - Present", where="Rostock, Germany",
         bullets=[
             "Architected and developed a new ERP and marina management system to replace the legacy "

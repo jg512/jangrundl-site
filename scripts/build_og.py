@@ -43,7 +43,7 @@ SS = 3  # supersampling factor; PIL draws aliased lines, so render big and shrin
 # ---------------------------------------------------------------- the words --
 KICKER = "ROSTOCK, GERMANY"
 NAME = "Jan Victornino Grundl"
-ROLE = "Research Assistant  ·  Software Developer"
+ROLE = "Research Assistant  ·  Software Engineer"
 DETAIL = "LLM agents  ·  IoT sensor systems  ·  software engineering"
 SITE = "jangrundl.de"
 HANDLE = "github.com/jg512"
