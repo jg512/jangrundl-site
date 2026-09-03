@@ -42,16 +42,15 @@ SUMMARY = (
 EXPERIENCE = [
     dict(
         org="Yachthafenresidenz Hohe Düne", url="https://www.hohe-duene.de/",
-        role="Software Engineer, Digitalisation & Full-Stack Development",
+        role="Software Engineer (IoT/ERP/POS)",
         when="Jul 2026 - Present", where="Rostock, Germany",
         bullets=[
-            "Architected and developed a new ERP and marina management system to replace the legacy "
-            "platform, modernising operations for a 920-berth marina, the largest in "
-            "Mecklenburg-Vorpommern and the first in Germany to hold a five-star classification.",
-            "Modernising the digital infrastructure across hotel and harbour software, databases and web; "
-            "reporting directly to the owner.",
-            "Audited the legacy Java systems for code quality and security issues and drafted the "
-            "migration path to a Django and PostgreSQL data model.",
+            "Architecting, integrating and developing a new ERP/POS system, including migration to a new "
+            "database, to replace a legacy platform and modernise operations for a 920-berth marina, the "
+            "largest in Mecklenburg-Vorpommern and one of the largest in Germany, with the goal of creating "
+            "a digital twin of the marina.",
+            "Handling end-to-end requirements engineering, working directly with management and stakeholders "
+            "to translate business operations into the technical migration roadmap.",
         ],
     ),
     dict(
@@ -337,9 +336,7 @@ def build():
 # SOURCES for every figure above, checked 2026-08-25:
 #   EUR 5 million / ERDF / 8 work packages / AP 6 ...... ki-tierwohl.de, ki-tierwohl.de/efre,
 #                                                        regierung-mv.de (EXF-25-1031..1038)
-#   920 berths, first 5-star marina in Germany ......... hohe-duene.de/yachthafen,
-#                                                        yachthafen-hohe-duene.de
-#   largest marina in Mecklenburg-Vorpommern ........... Jan's LinkedIn profile, 2026-08-26
+#   920 berths / marina size claims .................... Jan's LinkedIn profile, 2026-09-03
 #   138 vehicles, 40+ page specification, team of 5 .... Jan's own CV (cv_jan_grundl.pdf)
 #   13 practice partners, 60+ students ................. thefutureliving.com
 #   Top 3 of 300+ participants ......................... Jan's own CV
